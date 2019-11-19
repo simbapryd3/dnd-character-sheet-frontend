@@ -8,7 +8,7 @@
   font-family: 'Dungeon';
   src:
     local('Dungeon'),
-    url('../DUNGRG__.TTF')
+    url('./DUNGRG__.tff')
 }
 
 form{
