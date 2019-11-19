@@ -10,19 +10,30 @@
     local('Dungeon'),
     url('./DUNGRG__.tff')
 }
+button{
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+}
+
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
 
 form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color:lightblue;
-    
+    background-color:black;
 }
 
-form div {
-    padding: 10px 5px;
-    margin: 10px 5px;
-}
+  form div {
+      padding: 10px 5px;
+      margin: 10px 5px;
+  }
 header {
     /* position: fixed; */
     width: 100%;
@@ -49,7 +60,6 @@ header {
     width: 100%;
     z-index: 2;
   }
-
   li {
     list-style: none;
   }
@@ -117,17 +127,29 @@ header {
     background: red;
   }
 
+.submit{
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-self: space-between; */
+}
 .title{
   color:red;
   text-align: center;
 }
 
 .wrapper {
+  background-image: url("./paper.jpg");
   min-height: 100vh;
   margin: 0 auto;
   width: 85%;
 }
 
+#submit-text {
+  text-align: center;
+}
+=======
 .submit-button {
   max-width: 50px;
   align-self: center;
