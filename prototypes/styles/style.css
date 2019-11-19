@@ -48,7 +48,6 @@ header {
     width: 100%;
     z-index: 2;
   }
-
   li {
     list-style: none;
   }
@@ -94,6 +93,7 @@ header {
     transition: 0.3s all;
   }
 
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -107,7 +107,9 @@ header {
   nav a:hover {
     background: red;
   }
-
+.submit{
+  align-self: center;
+}
 .title{
   color:white;
 }

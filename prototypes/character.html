@@ -5,76 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>Choose Your Race</title>
+    <title>Build Your Character</title>
 </head>
 <body>
-    <div class="wrapper">
-        <header id="topnav">
-            <div class="inner">
-                    <h1 class="title">Character Sheet</h1>
-                <nav role='navigation'>
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./user.html">UserForm</a></li>
-                    <li><a href="./character.html">CharacterForm</a></li>
-                    <li><a href="./stats.html">StatsForm</a></li>
-                </ul>
-                </nav>  
-            </div>
-        </header>
-    <div id="race">
-        <h1 class="#" id="title">Choose Yuh Race?</h1>
-        <form class="#" action="" method="GET">
-            <select name="race">
-              <option value="Dwarf">Dwarf</option>
-              <option value="Halfling">Halfling</option>
-              <option value="Genasi">Genasi</option>
-              <option value="Dragonborn">Dragonborn</option>
-              <option value="Half-Orc">Half-Orc</option>
-            </select>
-            <br><br>
-            <input type="submit">
+  <div class="wrapper">
+    <section id="topnav">
+      <header class="inner">
+        <h1 class="title">Character Sheet</h1>
+          <nav role='navigation'>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./user.html">UserForm</a></li>
+                <li><a href="./character.html">CharacterForm</a></li>
+                <li><a href="./stats.html">StatsForm</a></li>
+            </ul>
+          </nav>  
+      </header>
+    </section>
+    <main id="character-form">
+      <h1>Build Out Ya Boi</h1>
+        <article id="player-name"><h2 class="#" id="title">Whats Ya Name Doe?</h2>
+          <form> 
+            <input type="text" id="username" name="username" placeholder="Gary Gygax"><br>
           </form>
-          
+        </article> 
+        <article id="dnd-race"><h2 class="#" id="title">Choose Yuh Race?</h2>
+          <form class="#" action="" method="GET">
+              <select name="race">
+                <option value="Dwarf">Dwarf</option>
+                <option value="Halfling">Halfling</option>
+                <option value="Genasi">Genasi</option>
+                <option value="Dragonborn">Dragonborn</option>
+                <option value="Half-Orc">Half-Orc</option>
+              </select>
+          </form>
           <section class="#" id ="suggestion">
-              <h2 class="#" id="suggestion-title">
-                  Suggested Races based on your current characteristic stats.
-              </h2>
-              <div id="options">
-                  
-              </div>
+            <h3 class="#" id="suggestion-title">
+              Suggested Races based on your current characteristic stats.
+            </h3>
+            <div id="options">Suggested Races Here</div>
           </section>
+        </article>
 
-          <div id="class">
-            <h1 class="#" id="title">Choose Yah Class Yo</h1>
-              <form class="#" action="" method="GET">
-                  <select name="dnd__class">
-                      <option value="#">Rogue</option>
-                      <option value="#">Paladin</option>
-                  <input type="submit">
-              </form>
-          </div>
-          <div class="wrapper">
-            <div class="card">
-              <article class="class__category">
-                <h2 class="class__name">
-                  Whoa check out this placeholder
-                </h2>
-                <p class="class__content">Lorem ipsum...</p>
-                <button class="submit">Select This Class</button>
-                  <img id="logo" src="https://i.pinimg.com/236x/90/ea/24/90ea2484b0c6fe42efddf468f5af19fc.jpg">
-              </article> 
-            </div>
-        
-            <div class="card">
-                <article class="class__category">
-                  <h2 class="class__name">
-                    Whoa check out this placeholder
-                  </h2>
-                  <p class="class__content">Lorem ipsum...</p>
-                  <button class="submit">Select This Class</button>
-                    
-            </div>
-    </div>
+        <article id="dnd-class">
+          <h2 class="#" id="title">Choose Yah Class Yo</h2>
+            <form class="#" action="" method="GET">
+                <select name="dnd__class">
+                    <option value="#">Rogue</option>
+                    <option value="#">Paladin</option>
+                </select>
+            </form>
+        </article>
+
+        <div class="submit">
+        <h2>Press this button when you done....</h2>
+        <button class= "submit" type="button">Press me!</button>
+        </div>
+
+    </main>
+        <footer>D&D&U &copy;</footer>
+  </div>
 </body>
 </html>
