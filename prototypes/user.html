@@ -10,22 +10,29 @@
 <body>
   <div class="wrapper">
     <header id="topnav">
-        <div class="inner">
-                <h1 class="title">Character Sheet</h1>
-            <nav role='navigation'>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./user.html">UserForm</a></li>
-                <li><a href="./character.html">CharacterForm</a></li>
-                <li><a href="./stats.html">StatsForm</a></li>
-            </ul>
-            </nav>  
-        </div>
+      <div class="inner">
+        <nav role='navigation'>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./user.html">UserForm</a></li>
+            <li><a href="./character.html">CharacterForm</a></li>
+            <li><a href="./stats.html">StatsForm</a></li>
+          </ul>
+        </nav>  
+      </div>
     </header>
-    <form>
-        <label>Enter your user name:
+    <h1 class="title">Please enter your information. We promise we won't sell it!&ast;</h1>
+    <form method= "POST", action="#" class="user-form">
+        <label>Enter your Full Name:
             <input type="text">
         </label>
+        <label>Enter your User name:
+            <input type="text">
+        </label>
+        <input class="submit-button" type="submit">
     </form>
+    <footer class="footer">
+      &ast;We are definitely going to sell your information
+    </footer>
   </div>
 </body>

@@ -105,6 +105,14 @@ header {
     transition: 0.3s all;
   }
 
+.footer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 150px;
+  color: lightgray;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
@@ -127,7 +135,8 @@ header {
   align-self: space-between; */
 }
 .title{
-  color:white;
+  color:red;
+  text-align: center;
 }
 
 .wrapper {
@@ -139,4 +148,28 @@ header {
 
 #submit-text {
   text-align: center;
+}
+=======
+.submit-button {
+  max-width: 50px;
+  align-self: center;
+}
+.user-form{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:10px;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 4px 5px rgba(5, 5, 5, .45) ;
+}
+.user-form >label{
+  padding:10px;
+  margin:10px;
+  align-content: center;
+}
+
+.title {
+  padding: 35px 5px;
+  
 }
