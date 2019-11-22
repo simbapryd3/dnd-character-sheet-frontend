@@ -9,7 +9,7 @@ import UserForm from "./Components/characterform";
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Nav />, document.getElementById('root'));
+ReactDOM.render(<Nav />, document.getElementById('nav'));
 ReactDOM.render(<Footer />, document.getElementById('footer'));
 ReactDOM.render(<UserForm />, document.getElementById('root'));
 
