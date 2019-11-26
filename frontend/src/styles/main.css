@@ -1,0 +1,25 @@
+.main-content {
+    margin: .25rem 0;
+    padding: .25rem 0;
+    width: 90%;
+}
+
+.main-header {
+    margin: .25rem 0;
+    padding: .25rem 0;
+}
+
+.navbar {
+    margin: .25rem 0;
+    padding: .25rem 0;
+}
+
+.main-wrapper {
+    margin: 0 auto;
+    width: 85%;
+    min-height: 100vh;
+    min-width: 40rem;
+    max-width: 70rem;
+    background-color: rgb(176, 179, 178);
+    box-shadow: rgb(71, 71, 71) 3px 3px 2px 4px;
+}
