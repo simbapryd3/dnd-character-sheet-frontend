@@ -38,7 +38,7 @@ function Main(props) {
 
   const currState = {
     "1": <Landing onclick={handleFormClick} />,
-    "2": <UserForm onchange={handleChange} />,
+    "2": <UserForm onchange={handleChange} onclick={handleFormClick} />,
     "3": <CharFrom />
   };
 

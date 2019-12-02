@@ -15,8 +15,8 @@ function UserForm(props) {
         Subscribe to our newsletter?
         <input type="checkbox" onChange={props.onchange} name="subscribe" />
       </label>
-      <button type="submit" value="1" name="back" onClick={props.onclick}>
-        Back
+      <button type="submit" value="3" name="back" onClick={props.onclick}>
+        Continue
       </button>
     </form>
   );
