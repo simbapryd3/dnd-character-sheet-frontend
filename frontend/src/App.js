@@ -1,59 +1,29 @@
-import React, {useState, useEffect} from 'react';
-import './styles/main.css';
-import './App.css';
-import Landing from './Components/Landing';
-
-
-
-function Nav() {
-  const [state, setState] = useState(<Landing/>)
-
-  function handleSubmitClick (event) {
-    const val = event.target.value;
-    setState(stateDict[val])
-  }
-
-  const stateDict = {
-    landing: <Landing/>
-  }
-
-
-  return (
-    <nav className="navbar">
-          <ul className="nav-list">
-            <li className="nav-item">
-              <button type="button"
-                className="nav-button">
-                Home
-              </button>
-            </li>
-            <li className="nav-item">
-              <button type="button"
-                className="nav-button">
-                About
-              </button>
-            </li>
-            <li className="nav-item">
-              <button type="button"
-                className="nav-button">
-                Find Character
-              </button>
-            </li>
-          </ul>
-    </nav>
-  )
-}
-
+import React, { useState, useEffect } from "react";
+import "./styles/main.css";
+import "./App.css";
+import Landing from "./Components/Landing";
+import Nav from "./Components/Nav";
+import Main from "./Components/Main";
 
 function App() {
+  const [navState, setNavState] = useState("");
+
+  const handleClick = event => {
+    const val = event.target.value;
+    setNavState(val);
+    console.log(navState);
+    console.log(val);
+  };
+
   return (
     <div className="main-wrapper">
       <header className="main-header">
-        <Nav/>
+        <Nav />
       </header>
       <div className="main-content">
-        <Landing/>
+        <Main />
       </div>
+      {navState}
     </div>
   );
 }
