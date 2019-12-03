@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Landing from "./Landing";
 import UserForm from "./UserForm";
 import CharFrom from "./CharForm";
+import RaceForm from "./RaceForm";
 
 const statForm = {
   step: 1,
@@ -39,7 +40,8 @@ function Main(props) {
   const currState = {
     "1": <Landing onclick={handleFormClick} />,
     "2": <UserForm onchange={handleChange} onclick={handleFormClick} />,
-    "3": <CharFrom />
+    "3": <CharFrom onchange={handleChange} onclick={handleFormClick} />,
+    "4": <RaceForm onchange={handleChange} onclick={handleFormClick} />
   };
 
   return <div>{currState[content]}</div>;

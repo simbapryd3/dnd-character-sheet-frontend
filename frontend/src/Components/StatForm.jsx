@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useFetchGet from "../utils/utils";
+import ModifierCalculator from "../utils/modifier-calculator";
 
 function StatForm(props) {
   const { bonusArray, onchange } = props;
@@ -25,11 +26,17 @@ function StatForm(props) {
     <div className="statform-wrapper">
       <form className="statform">
         <label className="stat-wrapper">
-          <input type="number" onChange={onchange} name="strength" value="1">
-            Strength:{" "}
+          <input type="number" 
+           onChange={onchange} 
+           name="strength" 
+           value="1">
+           Strength:{" "}
           </input>
-          <input type="number" onChange={onchange} name="dexterity" value="2">
-            Dexterity:{" "}
+          <input type="number" 
+           onChange={onchange} 
+           name="dexterity" 
+           value="2">
+           Dexterity:{" "}
           </input>
           <input
             type="number"
@@ -45,8 +52,11 @@ function StatForm(props) {
             value="4">
             Intelligence:{" "}
           </input>
-          <input type="number" onChange={onchange} name="wisdom" value="5">
-            Wisdom:{" "}
+          <input type="number" 
+           onChange={onchange} 
+           name="wisdom" 
+           value="5">
+           Wisdom:{" "}
           </input>
           <input
             type="number"
