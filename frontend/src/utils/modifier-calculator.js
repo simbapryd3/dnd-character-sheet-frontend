@@ -4,9 +4,9 @@ class ModifierCalculator {
         this.modifierValue = this.calculateModifier(statValue);
     }
     static calculateModifier (statValue) {
-        if (statValue < 2) {
+        if (statValue < 3) {
             return -4;
-        } else if (statValue > 19) {
+        } else if (statValue > 18) {
             return 4;
         } else {
             return modifierReference[statValue];
@@ -15,7 +15,6 @@ class ModifierCalculator {
 }
 
 const modifierReference = {
-    2: -4,
     3: -4,
     4: -3,
     5: -3,
@@ -32,7 +31,6 @@ const modifierReference = {
     16: 3,
     17: 3,
     18: 4,
-    19: 4
 }
 
 

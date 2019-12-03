@@ -5,10 +5,12 @@ import useFetchGet from "../utils/utils";
 function RaceForm(props) {
     const [raceState, setRaceState] = useState([]);
     const [raceInfo, setRaceInfo] = useState({})
+   
 useEffect(() => {
-        fetch("http://localhost:4000/races/all")
-            .then(response => response.json())
-            .then(data => setRaceState(data.raceResponse));
+    fetch("http://localhost:4000/races/all")
+        .then(response => response.json())
+        .then(data => setRaceState(data.raceResponse));
+    
 }, []);
     const getRaceInformation = (event) => {
         const index = event.target.value;
@@ -22,7 +24,8 @@ useEffect(() => {
         <div>
             {raceState.map((item, index) => (
                 <div className="race-card">
-                    <h1 key={index}>{item.name}</h1>
+                    
+                    <h1 key={index} onClick = {getRaceInformation()} value= {index}>{item.name}</h1>
 
                 </div>
             ))}
