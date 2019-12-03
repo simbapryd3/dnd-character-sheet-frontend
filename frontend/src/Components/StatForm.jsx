@@ -5,13 +5,15 @@ import ModifierCalculator from "../utils/modifier-calculator";
 function StatForm(props) {
   const { bonusArray, onchange } = props;
   const attributes = [
-    "strength",
-    "dexterity",
-    "constitution",
-    "intelligence",
-    "wisdom",
-    "charisma"
-  ];
+    strength: {bonus: bonusArray[0], mod: ModifierCalculator.calculateModifier()
+
+  ]
+    "dexterity": bonusArray[1],
+    "constitution": bonusArray[2],
+    "intelligence": bonusArray[3],
+    "wisdom": bonusArray[4],
+    "charisma": bonusArray[5]
+  };
 
   // const formColumns = ["Stat", "Modifier", "Bonus", "Total"];
   // const formRows = [];
@@ -22,6 +24,15 @@ function StatForm(props) {
   //   formRows.push(stat);
   // });
 
+  const createTableRows = (attributes) => {
+    return (
+      <tr>
+        {for (let i=0; i<attributes.length; i++) {
+          
+        }}
+      </tr>
+    )
+  }
   return (
     <div className="statform-wrapper">
       <form className="statform">

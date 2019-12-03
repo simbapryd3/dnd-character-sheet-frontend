@@ -18,11 +18,6 @@ useEffect(() => {
             .then(data => setRaceInfo(data));
         }
     }
-const raceInformation = (index)=> {
-    }
-    raceInformation(1);
-    console.log(raceInfo)
-console.log(raceState);
     return (
         <div>
             {raceState.map((item, index) => (
