@@ -1,14 +1,20 @@
-const DICE_URL = "localhost:4/roll";
+const DICE_URL = "http://localhost:4000/roll/";
 
 class DiceRoll {
     static async rollStats () {
-        const rawData = await fetch(DICE_URL + "4d6")
-        const diceRollArray = await rawData.json();
-        diceRollArray.splice(0, 1);
-        const statsTotal = diceRollArray.reduce((x, y) => {return x + y});
+        try {
+            const rawData = await fetch(DICE_URL + "d6" + "/4")
+            const diceRoll = await rawData.json();
+            const diceRollArray = diceRoll.roll;
+            diceRollArray.splice(0, 1);
+            const sumOfRolls = diceRollArray.reduce((x, y) => {return x + y});
+            return sumOfRolls;
 
-        return statsTotal;
+        } catch (err) {
+            return err;
+        }
     }
+    
     static async rollDice (dice) {
         const rawData = await fetch(DICE_URL + dice)
         const diceRollArray = await rawData.json();
@@ -18,14 +24,16 @@ class DiceRoll {
 
 module.exports = DiceRoll;
 
-if (require.main === module) {
-    const fetch = require('node-fetch');
-    async function test() {
-        const rawData = await fetch(DICE_URL + "4d6", {method: "GET", mode: "cors"})
-        const diceRollArray = await rawData.json();
-        diceRollArray.splice(0, 1);
-        const statsTotal = diceRollArray.reduce((x, y) => {return x + y});
-        console.log(statsTotal);
-    }
-    test();
-}
+// Manual Testing via Node
+// if (require.main === module) {
+//     async function test() {
+//         const fetch = require('node-fetch');
+//         const rawData = await fetch(DICE_URL + "d6" + "/4", {method: "GET"})
+//         const diceRoll = await rawData.json();
+//         const diceRollArray = diceRoll.roll; 
+//         diceRollArray.splice(0, 1);
+//         const sum = diceRollArray.reduce((x, y) => {return x + y});
+//         console.log(sum);
+//     }
+//     test();
+// }
