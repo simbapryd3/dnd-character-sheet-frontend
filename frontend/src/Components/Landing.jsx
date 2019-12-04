@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Landing(props) {
   return (
     <div>
-      <h2>This is the Landing Page!!! :D</h2>
+      <h2>Welcome to D&D and YOU. Here YOU can choose your D&D champion</h2>
       <button type="submit" value="2" name="next" onClick={props.onclick}>
         Next
       </button>

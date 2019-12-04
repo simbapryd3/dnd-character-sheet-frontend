@@ -13,18 +13,20 @@ function RaceInfo(props) {
     "http://localhost:4000/races/8",
     "http://localhost:4000/races/9"
   ];
+  let arr = [];
   useEffect(urls => {
     urls.forEach(item => {
       fetch(item)
         .then(response => response.json())
         .then(data => {
-          console.log(data);
-          setState(data);
+          arr.push(data);
+          setState(arr);
         });
     });
   }, []);
-  console.log(state);
-  return <h1>Race Info</h1>;
+
+  return;
+  state;
 }
 
 export default RaceInfo;

@@ -23,14 +23,12 @@ function RaceForm(props) {
 
   return (
     <div>
-      <h1>Race Form</h1>
+      <h1>Choose Your Character's Race</h1>
       {raceState.map((item, index) => {
         item.image = images[index];
         return (
           <div>
-            <h1 key={item.classId} name={item.name} value={item.name}>
-              {item.name}
-            </h1>
+            <h1 key={item.classId}>{item.name}</h1>
             <img src={item.image} />
             <button>
               <a
@@ -39,6 +37,9 @@ function RaceForm(props) {
               >
                 Learn More
               </a>
+            </button>
+            <button name="race" onClick={props.onclick} value="5">
+              {item.name}
             </button>
           </div>
         );
