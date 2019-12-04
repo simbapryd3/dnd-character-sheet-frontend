@@ -1,10 +1,49 @@
 import React, { useState, useEffect } from "react";
+import React, { Component } from "react";
 import useFetchGet from "../utils/utils";
 import ModifierCalculator from "../utils/modifier-calculator";
 import DiceRoll from "../utils/dice-roll";
 
-// Stat row in form table
-function StatRow({attribute, bonus}) {
+
+// Derrick trying shit...
+class Table extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      stat: [
+        { StatRow({attribute, bonus}) },
+        // attribute: "strength",
+        { StatRow({attribute, bonus}) },
+        { StatRow({attribute, bonus}) },
+        { StatRow({attribute, bonus}) },
+        { StatRow({attribute, bonus}) },
+        { StatRow({attribute, bonus}) }
+      ]
+    }
+  }
+  render() {
+    return(
+      <div>
+        <h1>Stats Table</h1>
+      </div>
+    )
+  }
+}
+
+renderTableData() {
+  return this.state.stat.map((stat, index) => {
+    const { attribute, bonus } = stat
+    return (
+       <tr key={id}>
+          <td>{id}</td>
+          <td>{attribute}</td>
+          <td>{bonus}</td>
+       </tr>
+    )
+ })
+}
+
+render() {
   
   // Change multiple states to one state as object
   const [modifier, setModifier] = useState(0);
