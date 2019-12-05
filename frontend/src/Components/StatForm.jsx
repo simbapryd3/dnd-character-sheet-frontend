@@ -3,6 +3,20 @@ import useFetchGet from "../utils/utils";
 import ModifierCalculator from "../utils/modifier-calculator";
 import DiceRoll from "../utils/dice-roll";
 
+const DiceRow = ({diceRollArray=[]}) => {
+  return (
+    <table>
+      <tbody>
+        <tr>
+          {diceRollArray.map((roll, index) => (
+            <td key={index} className="diceroll">{roll}</td>
+          ))}
+        </tr>
+      </tbody>
+    </table>
+  )
+}
+
 const StatRow = ({ attribute, bonus }) => {
   // Change multiple states to one state as object
   const [modifier, setModifier] = useState(0);
@@ -15,7 +29,7 @@ const StatRow = ({ attribute, bonus }) => {
   }
 
   useEffect(() => {
-    const total = Number(stat) + Number(bonus) + Number(modifier);
+    const total = Number(stat) + Number(bonus)
     const mod = ModifierCalculator.calculateModifier(total);
     setModifier(mod);
     setTotal(total);
@@ -26,17 +40,16 @@ const StatRow = ({ attribute, bonus }) => {
       <th>{attribute}</th>
       <td>
         <label className="attribute-value">
-          <input type="number" name={attribute} onChange={handleChange}></input>
-        </label>
+          <input type="number" name={attribute} onChange={handleChange}></input></label>
       </td>
       <td>
         <label className="bonus-value">{bonus}</label>
       </td>
       <td>
-        <label className="modifier-value">{modifier}</label>
+        <label className="total-value">{total}</label>
       </td>
       <td>
-        <label className="total-value">{total}</label>
+        <label className="modifier-value">{modifier}</label>
       </td>
     </tr>
   );
@@ -70,12 +83,15 @@ function StatForm({ bonusArray, onchange }) {
 
   return (
     <div className="statform-wrapper">
+      <DiceRow diceRollArray={statRolls}/>
       <form className="statform">
         <table className="stat-table">
           <thead>
-            {tableHeaders.map((i, index) => (
-              <th key={index}>{i}</th>
-            ))}
+            <tr>
+              {tableHeaders.map((i, index) => (
+                <th key={index}>{i}</th>
+              ))}
+            </tr>
           </thead>
           <tbody>
             {attributes.map((item, index) => {
@@ -94,10 +110,6 @@ function StatForm({ bonusArray, onchange }) {
   );
 }
 
-const tableHeaders = ["Attribute", "Value", "Bonus", "Modifier", "Total"];
+const tableHeaders = ["Attribute", "Value", "Bonus", "Total", "Modifier"]
 
 export default StatForm;
-
-/* Stretch Goals
- - Highlight class-based main stats (ex. Barbarian would have "strength" class highlighted, styled, etc.)
-*/
