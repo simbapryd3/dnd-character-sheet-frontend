@@ -10,7 +10,7 @@ const DiceRow = ({diceRollArray=[]}) => {
       <tbody>
         <tr>
           {diceRollArray.map((roll, index) => (
-            <td key={index} className="diceroll">{roll}</td>
+            <td className="die-value" key={index} className="diceroll">{roll}</td>
           ))}
         </tr>
       </tbody>
@@ -27,6 +27,10 @@ const StatRow = ({ attribute, bonus }) => {
   function handleChange(event) {
     const statValue = event.target.value;
     setStat(statValue);
+    const diceRollList = document.querySelector('.die-value');
+    diceRollList.map((die, index) => {
+      let selected
+    })
   }
 
   useEffect(() => {

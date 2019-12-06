@@ -18,7 +18,16 @@ function RaceInfo(props) {
   return (
     <div>
       {isLoading && <p>Wait I'm Loading info for you</p>}
-      <p>{raceInfo.ability_bonuses}</p>
+      <div color = "white">
+      <label> Speed </label>
+        <h3> {raceInfo.speed}</h3>
+        <label> Age </label>
+        <p>{raceInfo.age}</p>
+        <label> Alignment </label>
+        <p>{raceInfo.alignment}</p>
+        <label> Bonuses </label>
+        <p> {raceInfo.ability_bonuses}</p>
+        </div>
     </div>
   );
 }

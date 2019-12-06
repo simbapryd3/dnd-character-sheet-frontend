@@ -7,8 +7,9 @@
 .RaceForm__title {
     display: grid;
     justify-content: center;
+    grid-auto-flow: row;
 
 }
 .RaceForm__main{
-    background-image: url('./pics/dnd_mountain2.jpeg');
+    background-image: url('./img/paper-1074131_1920.jpg');
 }
