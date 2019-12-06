@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import '../styles/main.css';
+import "../styles/main.css";
 
 function Landing(props) {
   return (
     <div>
-      <h1 className = "landing_title">Welcome, Adventurer, to D&D&U</h1>
-      <h2 className = "landing_title">Your resource for building your D&D champion!</h2>
+      <h1 className="landing_title">Welcome Adventurer!</h1>
+      <h2 className="landing_title">Let's create your D&D champion!</h2>
       <button type="submit" value="2" name="next" onClick={props.onclick}>
-        Next
+        Get Started
       </button>
     </div>
   );

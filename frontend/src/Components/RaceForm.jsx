@@ -25,8 +25,8 @@ function RaceForm(props) {
   ];
 
   return (
-    <div className= "RaceForm__main">
-      <h1 className= "RaceForm__title">Choose Your Character's Race</h1>
+    <div className="RaceForm__main">
+      <h1 className="RaceForm__title">Choose Your Character's Race</h1>
       {raceState.map((item, index) => {
         item.image = images[index];
         return (
@@ -35,28 +35,27 @@ function RaceForm(props) {
             <img src={item.image} />
             <a
               href={"https://www.dndbeyond.com/races/" + item.name}
-              target="_blank">
+              target="_blank"
+            >
               {" "}
               Learn More
             </a>
-            
-            <RaceInfo index={index + 1} raceSelect ={props.handleRaceSelect} />
+
+            <RaceInfo index={index + 1} raceSelect={props.handleRaceSelect} />
             <button
               id={item.image}
               name="race"
               onClick={props.onclick}
-              value="5">
+              value="5"
+            >
               {item.name}
             </button>
-            
           </div>
         );
       })}
-      <button
-              onClick={props.onclick}
-              value="3">
-              Back
-            </button>
+      <button onClick={props.onclick} value="3">
+        Back
+      </button>
     </div>
   );
 }

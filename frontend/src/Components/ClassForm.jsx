@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../styles/DndClass.css";
 
 function ClassForm(props) {
   const [classState, setClassState] = useState([]);
@@ -26,13 +27,15 @@ function ClassForm(props) {
   console.log(classState);
 
   return (
-    <div>
+    <div className="multiple_class_cards">
       <h1>Choose Your Character's Class</h1>
       {classState.map((item, index) => {
         item.image = images[index];
         return (
-          <div>
-            <h1 key={item.classId}>{item.name}</h1>
+          <div className="class_card">
+            <h1 className="dndClass_name" key={item.classId}>
+              {item.name}
+            </h1>
             <img src={item.image} />
             <button>
               <a
@@ -49,7 +52,9 @@ function ClassForm(props) {
         );
       })}
 
-<button onClick={props.onclick} value="2">Back</button>
+      <button onClick={props.onclick} value="2">
+        Back
+      </button>
     </div>
   );
 }

@@ -35,14 +35,16 @@ function Main(props) {
     ability_bonuses: [],
     alignment: "",
     age: ""
-  })
+  });
 
   function handleRaceSelect(raceInfo) {
-    const {index, name, speed, ability_bonuses, alignment, age} = raceInfo;
-    setRaceInfo({index, name, speed, ability_bonuses, alignment, age});
+    const { index, name, speed, ability_bonuses, alignment, age } = raceInfo;
+    setRaceInfo({ index, name, speed, ability_bonuses, alignment, age });
   }
 
-
+  useEffect(() => {
+    let Number = props;
+  }, [props]);
 
   function handleChange(event) {
     event.preventDefault();
@@ -56,7 +58,7 @@ function Main(props) {
     const name = event.target.name;
     const val = event.target.innerText;
     const raceImage = event.target.id;
-   
+
     let newState = state;
     newState[name] = val;
     setImage(raceImage);
@@ -74,10 +76,18 @@ function Main(props) {
     "1": <Landing onclick={handleFormClick} />,
     "2": <UserForm onchange={handleChange} onclick={handleFormClick} />,
     "3": <CharFrom onchange={handleChange} onclick={handleClick} />,
-    "4": <RaceForm handleRaceSelect={handleRaceSelect} onchange={handleChange} onclick={handleClick}  />,
+    "4": (
+      <RaceForm
+        handleRaceSelect={handleRaceSelect}
+        onchange={handleChange}
+        onclick={handleClick}
+      />
+    ),
     "5": <Alignment onclick={handleClick} />,
-    "6": <StatForm race={raceInfo.ability_bonuses}  onclick={handleClick} />,
-    "7": <FinalSheet state={state} onchange={handleChange} onclick={handleClick} />
+    "6": <StatForm race={raceInfo.ability_bonuses} onclick={handleClick} />,
+    "7": (
+      <FinalSheet state={state} onchange={handleChange} onclick={handleClick} />
+    )
   };
   console.log(image);
   return <div>{currState[content]}</div>;

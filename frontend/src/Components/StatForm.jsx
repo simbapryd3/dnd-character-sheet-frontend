@@ -2,24 +2,47 @@ import React, { useState, useEffect } from "react";
 import useFetchGet from "../utils/utils";
 import ModifierCalculator from "../utils/modifier-calculator";
 import DiceRoll from "../utils/dice-roll";
+import "../styles/stat.css";
 
 // Dice Rolls
-const DiceRow = ({diceRollArray=[]}) => {
+const DiceRow = ({ diceRollArray = [] }) => {
   return (
-    <table>
+    <table className="diceroll">
       <tbody>
         <tr>
           {diceRollArray.map((roll, index) => (
-            <td className="die-value" key={index} className="diceroll">{roll}</td>
+            <td className="die-value" key={index}>
+              {roll}
+            </td>
           ))}
         </tr>
       </tbody>
     </table>
-  )
-}
+  );
+};
+
+// function styleRolledDiceSelection() {
+//   const diceRollArray = document.querySelectorAll(".die-value");
+//   const statArray = document.querySelectorAll(".stat-value");
+//   const diceRolls = [];
+//   diceRollArray.forEach((item, index) => {
+//     diceRolls.push(item.textContent);
+//   });
+
+//   let diceIndex = [];
+//   for (let i = 0; i < diceRollArray.length; i++) {
+//     switch (diceRollArray[i].textContent) {
+//       case dieValue:
+//         diceIndex.push(dieValue);
+//         break;
+//       default:
+//         break;
+//     }
+//   }
+// }
 
 // Row of Stats in StatForm Table
-const StatRow = ({ attribute, bonus }) => {
+const StatRow = ({ attribute, bonus, diceRollArray }) => {
   const [modifier, setModifier] = useState(0);
   const [stat, setStat] = useState(0);
   const [total, setTotal] = useState(0);
@@ -27,18 +50,17 @@ const StatRow = ({ attribute, bonus }) => {
   function handleChange(event) {
     const statValue = event.target.value;
     setStat(statValue);
-    const diceRollList = document.querySelector('.die-value');
+    const diceRollList = document.querySelector(".die-value");
     diceRollList.map((die, index) => {
-      let selected
-    })
+      let selected;
+    });
   }
 
   useEffect(() => {
-    const total = Number(stat) + Number(bonus)
+    const total = Number(stat) + Number(bonus);
     const mod = ModifierCalculator.calculateModifier(total);
     setModifier(mod);
     setTotal(total);
-
   }, [stat, bonus]);
 
   return (
@@ -46,7 +68,14 @@ const StatRow = ({ attribute, bonus }) => {
       <th>{attribute}</th>
       <td>
         <label className="attribute-value">
-          <input type="number" name={attribute} onChange={handleChange} defaultValue="0"></input></label>
+          <input
+            type="number"
+            className="stat-value"
+            name={attribute}
+            onChange={handleChange}
+            defaultValue="0"
+          ></input>
+        </label>
       </td>
       <td>
         <label className="bonus-value">{bonus}</label>
@@ -88,7 +117,7 @@ function StatForm(props) {
 
   return (
     <div className="statform-wrapper">
-      <DiceRow diceRollArray={statRolls}/>
+      <DiceRow diceRollArray={statRolls} />
       <form className="statform">
         <table className="stat-table">
           <thead>
@@ -105,18 +134,23 @@ function StatForm(props) {
                   key={index}
                   attribute={item.attribute}
                   bonus={item.bonus}
+                  diceRollArray={statRolls}
                 />
               );
             })}
           </tbody>
         </table>
       </form>
-      <button onClick={props.onclick} value="7">Next</button>
-      <button onClick={props.onclick} value="6">Back</button>
+      <button onClick={props.onclick} value="7">
+        Next
+      </button>
+      <button onClick={props.onclick} value="6">
+        Back
+      </button>
     </div>
   );
 }
 
-const tableHeaders = ["Attribute", "Value", "Bonus", "Total", "Modifier"]
+const tableHeaders = ["Attribute", "Value", "Bonus", "Total", "Modifier"];
 
 export default StatForm;

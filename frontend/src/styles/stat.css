@@ -1,0 +1,15 @@
+.die-value {
+  color: black;
+  padding: 0.25rem 0.75rem;
+  margin: 0.25rem;
+}
+
+.diceroll {
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.selected {
+  color: gray;
+  text-decoration: line-through;
+}

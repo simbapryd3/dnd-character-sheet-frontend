@@ -1,52 +1,56 @@
-@import url('https://dafont.com/dungeon-sn.font');
-/* font-family: dungeon-sn; */
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: dungeon-sn, san;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "IM Fell English SC", serif;
+  src: url("./fonts/IMFellEnglishSC-Regular.ttf");
 }
 
 body {
-    padding: 0;
+  background-image: url("https://images.unsplash.com/photo-1547638382-ed227146ab88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1491&q=80");
+  padding: 0;
 }
 
 button {
-    margin: 0;
-    display: grid;
-    justify-self: center;
+  margin: 0;
+  display: grid;
+  justify-self: center;
 }
 
 .landing_title {
-    display: grid;
-    justify-content: center;
-    grid-auto-flow: row;
-    padding: .5rem;
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: row;
+  padding: 0.5rem;
 }
 
 .main-content {
-    margin: 2rem;
-    padding: 2rem;
-    width: 90%;  
+  margin: 2rem;
+  padding: 2rem;
+  width: 90%;
 }
 
 .main-header {
-    margin: .25rem 0;
-    padding: .25rem 0;
+  margin: 0.25rem 0;
+  padding: 0.25rem 0;
+  width: 100%;
 }
 
 .main-wrapper {
-    background-image: url("./img/dnd_mountain2.jpeg");
-    margin: 0 auto;
-    width: 85%;
-    min-height: 100vh;
-    min-width: 40rem;
-    max-width: 70rem;
-    box-shadow: rgb(71, 71, 71) 3px 3px 2px 4px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100%;
+  max-width: 100%;
+  /* box-shadow: rgb(71, 71, 71) 3px 3px 2px 4px; */
 }
 
 .navbar {
-    margin: .25rem 0;
-    padding: .25rem 0;
+  margin: 0.25rem 0;
+  padding: 0.25rem 0;
 }
+
+/* purple rain purple > #7851a9  */
