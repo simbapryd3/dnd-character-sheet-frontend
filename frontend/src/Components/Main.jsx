@@ -13,6 +13,7 @@ const statForm = {
   charactername: "",
   dndClass: "",
   race: "",
+  raceId: "",
   alignment: "",
   strength: "",
   dexterity: "",
@@ -38,7 +39,10 @@ function Main(props) {
   function handleClick(event) {
     const name = event.target.name;
     const val = event.target.innerText;
+    const raceIndex = event.target.id;
+   
     let newState = state;
+    newState.raceId = raceIndex;
     newState[name] = val;
     setState(newState);
     const formKey = event.target.value;
@@ -56,7 +60,7 @@ function Main(props) {
     "3": <CharFrom onchange={handleChange} onclick={handleClick} />,
     "4": <RaceForm onchange={handleChange} onclick={handleClick} />,
     "5": <Alignment onclick={handleClick} />,
-    "6": <StatForm onchange={handleChange} onclick={handleClick} />
+    "6": <StatForm props={state.raceId} />
   };
   console.log(state);
   return <div>{currState[content]}</div>;

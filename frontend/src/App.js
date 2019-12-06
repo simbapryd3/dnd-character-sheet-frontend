@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/main.css";
 import "./App.css";
 import Landing from "./Components/Landing";
-import Nav from "./Components/nav";
+import Nav from "./Components/Nav";
 import Main from "./Components/Main";
 
 function App() {

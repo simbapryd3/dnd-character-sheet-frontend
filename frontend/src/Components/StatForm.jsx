@@ -33,6 +33,7 @@ const StatRow = ({ attribute, bonus }) => {
     const mod = ModifierCalculator.calculateModifier(total);
     setModifier(mod);
     setTotal(total);
+
   }, [stat]);
 
   return (
@@ -55,8 +56,9 @@ const StatRow = ({ attribute, bonus }) => {
   );
 };
 
-function StatForm({ bonusArray, onchange }) {
+function StatForm(props) {
   const [statRolls, setStatRolls] = useState([]);
+  const [bonusArray, setBonusArray] = useState([]);
   if (!bonusArray) {
     bonusArray = [0, 0, 0, 0, 0, 0];
   }
@@ -78,8 +80,15 @@ function StatForm({ bonusArray, onchange }) {
       setStatRolls(statRolls);
       console.log("Stat rolls ---->    ", statRolls);
     }
+    async function getBonus() {
+      const rawData = await fetch(`http://localhost/races/${props.raceId}`)
+      const response = await rawData.json();
+      const raceBonuses = await response.ability_bonuses;
+      setBonusArray(raceBonuses);
+    }
     getRolls();
-  }, []);
+    getBonus();
+  }, [props]);
 
   return (
     <div className="statform-wrapper">

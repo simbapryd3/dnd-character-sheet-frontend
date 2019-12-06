@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useFetchGet from "../utils/utils";
+import RaceInfo from "./RaceInfo";
 
 function RaceForm(props) {
   const [raceState, setRaceState] = useState([]);
@@ -30,15 +30,18 @@ function RaceForm(props) {
           <div>
             <h1 key={item.classId}>{item.name}</h1>
             <img src={item.image} />
-            <button>
-              <a
-                href={"https://www.dndbeyond.com/races/" + item.name}
-                target="_blank"
-              >
-                Learn More
-              </a>
-            </button>
-            <button name="race" onClick={props.onclick} value="5">
+            <a
+              href={"https://www.dndbeyond.com/races/" + item.name}
+              target="_blank">
+              {" "}
+              Learn More
+            </a>
+            <RaceInfo index={index + 1} />
+            <button
+              id={item.raceId}
+              name="race"
+              onClick={props.onclick}
+              value="5">
               {item.name}
             </button>
           </div>

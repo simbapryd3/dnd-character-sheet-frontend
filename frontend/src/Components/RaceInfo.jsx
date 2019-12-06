@@ -1,32 +1,26 @@
 import React, { useState, useEffect } from "react";
 
 function RaceInfo(props) {
-  const [state, setState] = useState([]);
-  const urls = [
-    "http://localhost:4000/races/1",
-    "http://localhost:4000/races/2",
-    "http://localhost:4000/races/3",
-    "http://localhost:4000/races/4",
-    "http://localhost:4000/races/5",
-    "http://localhost:4000/races/6",
-    "http://localhost:4000/races/7",
-    "http://localhost:4000/races/8",
-    "http://localhost:4000/races/9"
-  ];
-  let arr = [];
-  useEffect(urls => {
-    urls.forEach(item => {
-      fetch(item)
-        .then(response => response.json())
-        .then(data => {
-          arr.push(data);
-          setState(arr);
-        });
-    });
-  }, []);
+  const [raceInfo, setRaceInfo] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  return;
-  state;
+  useEffect(() => {
+    fetch(`http://localhost:4000/races/${props.index}`)
+      .then(res => res.json())
+      .then(response => {
+        setRaceInfo(response);
+        setIsLoading(false);
+      })
+      .catch(error => console.log(error));
+  }, []);
+  console.log(raceInfo);
+  return (
+    <div>
+      {isLoading && <p>Wait I'm Loading info for you</p>}
+      <p>{raceInfo.ability_bonuses}</p>
+    </div>
+  );
 }
 
 export default RaceInfo;
+

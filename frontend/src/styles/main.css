@@ -23,3 +23,10 @@
     background-color: rgb(176, 179, 178);
     box-shadow: rgb(71, 71, 71) 3px 3px 2px 4px;
 }
+
+.landing_title {
+    display: flex;
+    flex-direction:  column;
+    color: red;
+    justify-content: center;
+}
