@@ -77,7 +77,7 @@ function Main(props) {
     "4": <RaceForm handleRaceSelect={handleRaceSelect} onchange={handleChange} onclick={handleClick}  />,
     "5": <Alignment onclick={handleClick} />,
     "6": <StatForm race={raceInfo.ability_bonuses}  onclick={handleClick} />,
-    "7": <FinalSheet onchange={handleChange} onclick={handleClick} />
+    "7": <FinalSheet state={state} onchange={handleChange} onclick={handleClick} />
   };
   console.log(image);
   return <div>{currState[content]}</div>;

@@ -11,7 +11,7 @@ function RaceForm(props) {
         setRaceState(data.raceResponse);
       });
   }, []);
-  
+
   const images = [
     "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/254/420/618/636271781394265550.png",
     "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png",
