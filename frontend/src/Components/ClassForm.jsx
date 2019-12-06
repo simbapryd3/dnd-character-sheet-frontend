@@ -48,6 +48,8 @@ function ClassForm(props) {
           </div>
         );
       })}
+
+<button onClick={props.onclick} value="2">Back</button>
     </div>
   );
 }

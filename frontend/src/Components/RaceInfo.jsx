@@ -10,6 +10,7 @@ function RaceInfo(props) {
       .then(response => {
         setRaceInfo(response);
         setIsLoading(false);
+        props.raceSelect(response);
       })
       .catch(error => console.log(error));
   }, []);

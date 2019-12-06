@@ -1,0 +1,14 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.RaceForm__title {
+    display: grid;
+    justify-content: center;
+
+}
+.RaceForm__main{
+    background-image: url('./pics/dnd_mountain2.jpeg');
+}

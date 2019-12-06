@@ -3,6 +3,7 @@ import useFetchGet from "../utils/utils";
 import ModifierCalculator from "../utils/modifier-calculator";
 import DiceRoll from "../utils/dice-roll";
 
+// Dice Rolls
 const DiceRow = ({diceRollArray=[]}) => {
   return (
     <table>
@@ -17,8 +18,8 @@ const DiceRow = ({diceRollArray=[]}) => {
   )
 }
 
+// Row of Stats in StatForm Table
 const StatRow = ({ attribute, bonus }) => {
-  // Change multiple states to one state as object
   const [modifier, setModifier] = useState(0);
   const [stat, setStat] = useState(0);
   const [total, setTotal] = useState(0);
@@ -34,14 +35,14 @@ const StatRow = ({ attribute, bonus }) => {
     setModifier(mod);
     setTotal(total);
 
-  }, [stat]);
+  }, [stat, bonus]);
 
   return (
     <tr className="stat-table_row">
       <th>{attribute}</th>
       <td>
         <label className="attribute-value">
-          <input type="number" name={attribute} onChange={handleChange}></input></label>
+          <input type="number" name={attribute} onChange={handleChange} defaultValue="0"></input></label>
       </td>
       <td>
         <label className="bonus-value">{bonus}</label>
@@ -56,12 +57,10 @@ const StatRow = ({ attribute, bonus }) => {
   );
 };
 
+// Character stat form
 function StatForm(props) {
   const [statRolls, setStatRolls] = useState([]);
   const [bonusArray, setBonusArray] = useState([]);
-  if (!bonusArray) {
-    bonusArray = [0, 0, 0, 0, 0, 0];
-  }
   const attributes = [
     { attribute: "strength", bonus: bonusArray[0] },
     { attribute: "dexterity", bonus: bonusArray[1] },
@@ -78,17 +77,10 @@ function StatForm(props) {
         statRolls.push(roll);
       }
       setStatRolls(statRolls);
-      console.log("Stat rolls ---->    ", statRolls);
-    }
-    async function getBonus() {
-      const rawData = await fetch(`http://localhost/races/${props.raceId}`)
-      const response = await rawData.json();
-      const raceBonuses = await response.ability_bonuses;
-      setBonusArray(raceBonuses);
+      props.race && setBonusArray(props.race);
     }
     getRolls();
-    getBonus();
-  }, [props]);
+  }, [props.race]);
 
   return (
     <div className="statform-wrapper">
@@ -115,6 +107,8 @@ function StatForm(props) {
           </tbody>
         </table>
       </form>
+      <button onClick={props.onclick} value="7">Next</button>
+      <button onClick={props.onclick} value="6">Back</button>
     </div>
   );
 }

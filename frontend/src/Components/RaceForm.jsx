@@ -7,7 +7,9 @@ function RaceForm(props) {
   useEffect(() => {
     fetch("http://localhost:4000/races/all")
       .then(response => response.json())
-      .then(data => setRaceState(data.raceResponse));
+      .then(data => {
+        setRaceState(data.raceResponse);
+      });
   }, []);
   const images = [
     "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/254/420/618/636271781394265550.png",
@@ -22,8 +24,8 @@ function RaceForm(props) {
   ];
 
   return (
-    <div>
-      <h1>Choose Your Character's Race</h1>
+    <div className= "RaceForm__main">
+      <h1 className= "RaceForm__title">Choose Your Character's Race</h1>
       {raceState.map((item, index) => {
         item.image = images[index];
         return (
@@ -36,17 +38,24 @@ function RaceForm(props) {
               {" "}
               Learn More
             </a>
-            <RaceInfo index={index + 1} />
+            
+            <RaceInfo index={index + 1} raceSelect ={props.handleRaceSelect} />
             <button
-              id={item.raceId}
+              id={item.image}
               name="race"
               onClick={props.onclick}
               value="5">
               {item.name}
             </button>
+            
           </div>
         );
       })}
+      <button
+              onClick={props.onclick}
+              value="3">
+              Back
+            </button>
     </div>
   );
 }

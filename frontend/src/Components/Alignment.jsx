@@ -34,6 +34,7 @@ function Alignment(props) {
           Neutral Evil
         </button>
       </div>
+      <button onClick={props.onclick} value="5">Back</button>
     </div>
   );
 }

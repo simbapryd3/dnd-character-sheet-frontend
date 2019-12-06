@@ -26,7 +26,23 @@ const statForm = {
 
 function Main(props) {
   const [state, setState] = useState(statForm);
+  const [image, setImage] = useState("");
   const [content, setContent] = useState("1");
+  const [raceInfo, setRaceInfo] = useState({
+    index: "",
+    name: "",
+    speed: "",
+    ability_bonuses: [],
+    alignment: "",
+    age: ""
+  })
+
+  function handleRaceSelect(raceInfo) {
+    const {index, name, speed, ability_bonuses, alignment, age} = raceInfo;
+    setRaceInfo({index, name, speed, ability_bonuses, alignment, age});
+  }
+
+
 
   function handleChange(event) {
     event.preventDefault();
@@ -39,11 +55,11 @@ function Main(props) {
   function handleClick(event) {
     const name = event.target.name;
     const val = event.target.innerText;
-    const raceIndex = event.target.id;
+    const raceImage = event.target.id;
    
     let newState = state;
-    newState.raceId = raceIndex;
     newState[name] = val;
+    setImage(raceImage);
     setState(newState);
     const formKey = event.target.value;
     setContent(formKey);
@@ -58,11 +74,12 @@ function Main(props) {
     "1": <Landing onclick={handleFormClick} />,
     "2": <UserForm onchange={handleChange} onclick={handleFormClick} />,
     "3": <CharFrom onchange={handleChange} onclick={handleClick} />,
-    "4": <RaceForm onchange={handleChange} onclick={handleClick} />,
+    "4": <RaceForm handleRaceSelect={handleRaceSelect} onchange={handleChange} onclick={handleClick}  />,
     "5": <Alignment onclick={handleClick} />,
-    "6": <StatForm props={state.raceId} />
+    "6": <StatForm race={raceInfo.ability_bonuses}  onclick={handleClick} />,
+    "7": <FinalSheet onchange={handleChange} onclick={handleClick} />
   };
-  console.log(state);
+  console.log(image);
   return <div>{currState[content]}</div>;
 }
 
