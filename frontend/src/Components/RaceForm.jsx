@@ -25,13 +25,14 @@ function RaceForm(props) {
   ];
 
   return (
-    <div className="RaceForm__main">
-      <h1 className="RaceForm__title">Choose Your Character's Race</h1>
+    <div className="multiple_cards">
+          <h1>Choose Your Character's Race</h1>
+
       {raceState.map((item, index) => {
         item.image = images[index];
         return (
-          <div>
-            <h1 key={item.classId}>{item.name}</h1>
+          <div className="race_card">
+            <h1 className="dndRace_name" key={item.classId}>{item.name}</h1>
             <img src={item.image} />
             <a
               href={"https://www.dndbeyond.com/races/" + item.name}

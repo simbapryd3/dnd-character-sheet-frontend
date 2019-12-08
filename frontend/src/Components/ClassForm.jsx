@@ -27,7 +27,7 @@ function ClassForm(props) {
   console.log(classState);
 
   return (
-    <div className="multiple_class_cards">
+    <div className="multiple_cards">
       <h1>Choose Your Character's Class</h1>
       {classState.map((item, index) => {
         item.image = images[index];
