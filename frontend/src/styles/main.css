@@ -5,9 +5,8 @@
 }
 
 @font-face {
-  font-family: "Cinzel Decorative", cursive;
   font-family: "Uncial Antiqua", cursive;
-  src: url("./fonts/CinzelDecorative-Bold.ttf");
+  src: url("./fonts/UncialAntiqua-Regular.ttf");
 }
 
 body {
@@ -25,7 +24,7 @@ button {
 
 
 h1, h2 {
-  font-family: "Cinzel Decorative", cursive;
+  font-family: "Uncial Antiqua", cursive;
 }
 
 .landing_title {

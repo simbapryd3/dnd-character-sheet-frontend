@@ -5,22 +5,17 @@ import DiceRoll from "../utils/dice-roll";
 import "../styles/stat.css";
 
 // Dice Rolls
-const DiceRow = ({ diceRollArray = [], diceSelectionArray }) => {
+const DiceRow = ({ diceRollArray = [] }) => {
   return (
     <table className="diceroll">
       <tbody>
         <tr>
-          {diceRollArray.map((roll, index) =>
-            diceSelectionArray[index] ? (
+          {diceRollArray.map((roll, index) => 
               <td className="die-value selection" key={index}>
                 {roll}
               </td>
-            ) : (
-              <td className="die-value" key={index}>
-                {roll}
-              </td>
-            )
-          )}
+          )
+          }
         </tr>
       </tbody>
     </table>

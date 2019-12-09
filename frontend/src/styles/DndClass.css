@@ -1,4 +1,4 @@
-/* body {
+body {
   background-image: url("./img/dnd_forest3.jpeg");
   background-size: cover;
   background-attachment: fixed;
@@ -45,19 +45,22 @@ img {
   color: orange;
 }
 
-/* .card-header {
+.card-header {
     padding: 15px;
     display: flex;
     flex-direction: column;
-    .card-title {
+}
+
+.card-title {
       font-size: 24px;
       font-weight: 600;
-    } */
-/* .card-subtitle {
+}    
+
+.card-subtitle {
       font-size: 14px;
-    }
-  } */
-/* .card-content {
+}
+
+.card-content {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -78,64 +81,15 @@ img {
     padding: 15px;
     font-size: 13px;
   }
-}
+
 
 .mcr-card:hover {
   transform: scale(1.1, 1.1) translateY(50px);
   opacity: 1;
   max-height: 520px;
   transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
-  .card-footer {
+}
+
+.card-footer {
     color: #000 !important;
-  }
 }
-
-@media (max-width: 1366px) {
-  .mcr-card {
-    max-width: 200px;
-    max-height: 350px;
-    .card-content {
-      img {
-        max-width: 250px;
-        max-height: 340px;
-        margin-bottom: 45px;
-      }
-    }
-    .card-footer {
-      display: none;
-    }
-  }
-  .mcr-card:hover {
-    max-height: 440px;
-    img {
-      margin-bottom: 0px;
-      transition: margin-bottom 0.3s;
-    }
-  }
-}
-
-@media (max-width: 1024px) {
-  .multiple-cards {
-    flex-direction: column;
-  }
-  .mcr-card {
-    width: 400px;
-    max-width: 400px;
-    max-height: 275px;
-    .card-content {
-      img {
-        max-width: 400px;
-        max-height: 200px;
-        margin-bottom: 15px;
-        object-fit: cover;
-      }
-    }
-    .card-footer {
-      display: none;
-    }
-  }
-  .mcr-card:hover {
-    max-height: 270px;
-    margin-bottom: 70px;
-  }
-} */ 
