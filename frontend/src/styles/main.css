@@ -62,6 +62,7 @@ h1, h2 {
 
 .multiple_cards {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(2, auto);
   overflow: wrap;
 }
