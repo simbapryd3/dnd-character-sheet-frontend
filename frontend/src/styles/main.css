@@ -23,6 +23,7 @@ button {
   justify-self: center;
 }
 
+
 h1, h2 {
   font-family: "Cinzel Decorative", cursive;
 }
@@ -62,6 +63,7 @@ h1, h2 {
 
 .multiple_cards {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(2, auto);
   overflow: wrap;
 }
@@ -97,4 +99,3 @@ h1, h2 {
   opacity: 0.95;
   transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
 }
-

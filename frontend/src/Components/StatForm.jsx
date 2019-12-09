@@ -27,39 +27,62 @@ const DiceRow = ({ diceRollArray = [], diceSelectionArray }) => {
   );
 };
 
-// function styleRolledDiceSelection() {
-//   const diceRollArray = document.querySelectorAll(".die-value");
-//   const statArray = document.querySelectorAll(".stat-value");
-//   const diceRolls = [];
-//   diceRollArray.forEach((item, index) => {
-//     diceRolls.push(item.textContent);
-//   });
-
-//   let diceIndex = [];
-//   for (let i = 0; i < diceRollArray.length; i++) {
-//     switch (diceRollArray[i].textContent) {
-//       case dieValue:
-//         diceIndex.push(dieValue);
-//         break;
-//       default:
-//         break;
-//     }
-//   }
-// }
-
 // Row of Stats in StatForm Table
-const StatRow = ({ attribute, bonus, diceRollArray }) => {
+const StatRow = ({ attribute, bonus }) => {
   const [modifier, setModifier] = useState(0);
   const [stat, setStat] = useState(0);
   const [total, setTotal] = useState(0);
 
+  function formatSelectedRolls() {
+    const diceRollList = document.querySelectorAll(".die-value");
+    const statInputs = document.querySelectorAll(".stat-value");
+    let matchIndex = {};
+    for (let x=0; x < diceRollList.length; x++) {
+      let findCount = 0;
+      let die = diceRollList[x];
+      for (let i = 0; i < statInputs.length; i++) {
+        let stat = statInputs[i];
+        if (findCount > 0) {
+          continue;
+        } 
+        if (stat.value === die.textContent) {
+          if (matchIndex[die.textContent] === i) {
+            continue;
+          } else {
+            matchIndex[die.textContent] = i;
+            die.classList.add('selected');
+            findCount += 1;
+          }
+        }
+      }
+    }
+    
+    const selectedRolls = document.querySelectorAll(".selected")
+    let duplicateSet = {}
+    if (selectedRolls.length && selectedRolls.length > 0) {
+      selectedRolls.forEach((selected) => {
+        let selectCount = 0;
+        statInputs.forEach((stat, index) => {
+          if (selected.textContent === stat.value) {
+            if (duplicateSet[selected.textContent] === index) {
+              // selected.classList.remove('selected');
+            } else {
+              selectCount += 1;
+              duplicateSet[selected.textContent] = index;
+            }
+          }
+        })
+        if (selectCount === 0) {
+          selected.classList.remove('selected');
+        }
+      })
+    }
+  }
+
   function handleChange(event) {
     const statValue = event.target.value;
     setStat(statValue);
-    const diceRollList = document.querySelector(".die-value");
-    diceRollList.map((die, index) => {
-      let selected;
-    });
+    formatSelectedRolls();
   }
 
   useEffect(() => {
