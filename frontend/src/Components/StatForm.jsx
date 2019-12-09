@@ -164,12 +164,14 @@ function StatForm(props) {
           </tbody>
         </table>
       </form>
-      <button onClick={props.onclick} value="7">
-        Next
-      </button>
-      <button onClick={props.onclick} value="6">
-        Back
-      </button>
+      <div className="button-wrapper">
+        <button onClick={props.onclick} value="5">
+          Back
+        </button>
+        <button onClick={props.onclick} value="7">
+          Next
+        </button>
+      </div>
     </div>
   );
 }

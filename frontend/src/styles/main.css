@@ -10,13 +10,7 @@
   src: url("./fonts/UncialAntiqua-Regular.ttf");
 }
 
-body {
-  
-  padding: 0;
-}
-
-button {
-  margin: 0;
+.button {
   display: grid;
   justify-self: center;
 }
@@ -42,7 +36,8 @@ button {
 
 .main-wrapper {
   background-image: url("https://images.unsplash.com/photo-1547638382-ed227146ab88?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1491&q=80");
-  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   margin: 0 auto;
   width: 100%;
@@ -57,9 +52,8 @@ button {
   padding: 0.25rem 0;
 }
 
-.multiple_cards {
+.multiple_class_cards {
   display: grid;
-  justify-content: center;
   grid-template-columns: repeat(2, auto);
   overflow: wrap;
 }
@@ -68,30 +62,82 @@ button {
   border-radius: 10px;
   background-image: url("./img/parchment-paper.jpg");
   background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  display: grid;
+  grid-template-areas: "img img name"
+                       "img speed speed"
+                       "img age age"
+                       "learnmore align align"
+                       "button button button";
+  
   padding: 15px;
   margin: 15px;
-  max-width: 300px;
-  max-height: 450px;
+  max-width: 600px;
+  max-height: 6000px;
   box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
   opacity: 0.95;
   transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
+}
+
+.multiple_race_cards {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, auto);
+  overflow: wrap;
 }
 
 .race_card {
   border-radius: 10px;
   background-image: url("./img/parchment-paper.jpg");
   background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
+  display: grid;
+  grid-template-areas: "img name"
+                       "img info"
+                       "img info"
+                       "learnmore info"
+                       "button button";
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 1.5fr 1.25fr;
+  
   padding: 15px;
   margin: 15px;
-  max-width: 600px;
-  max-height: 600px;
+  max-width: 900px;
+  max-height: 900px;
   box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
   opacity: 0.95;
   transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
+}
+
+.race_card img {
+  grid-area: img;
+}
+
+.learn_button {
+  grid-area: learnmore;
+  justify-self: center;
+}
+
+.select-race_button {
+  font-size: 2rem;
+  grid-area: button;
+  color: whitesmoke;
+  background-color: darkcyan;
+  padding: .5rem 0;
+  margin: .5rem 1rem;
+}
+
+.select-race_button:hover {
+  cursor: pointer;
+}
+
+.race-info {
+  grid-area: info;
+}
+
+.race-info_alignment {
+  padding: .75rem .25rem;
+  margin: 2rem .25rem;
+}
+
+.race-info_bonus table td{
+  padding: 25px;
 }

@@ -28,6 +28,11 @@ function Main(props) {
   const [state, setState] = useState(statForm);
   const [image, setImage] = useState("");
   const [content, setContent] = useState("1");
+  const [classInfo, setClassInfo] = useState({
+    index: "",
+    name: "",
+    hit_die: "",
+  });
   const [raceInfo, setRaceInfo] = useState({
     index: "",
     name: "",
@@ -36,6 +41,11 @@ function Main(props) {
     alignment: "",
     age: ""
   });
+
+  function handleClassSelect(classInfo) {
+    const { index, name, hit_die } = classInfo;
+    setClassInfo({ index, name, hit_die});
+  }
 
   function handleRaceSelect(raceInfo) {
     const { index, name, speed, ability_bonuses, alignment, age } = raceInfo;
@@ -75,7 +85,11 @@ function Main(props) {
   const currState = {
     "1": <Landing onclick={handleFormClick} />,
     "2": <UserForm onchange={handleChange} onclick={handleFormClick} />,
-    "3": <CharFrom onchange={handleChange} onclick={handleClick} />,
+    "3": <CharFrom 
+    handleClassSelect={handleClassSelect}
+    onchange={handleChange} 
+    onclick={handleClick} 
+    />,
     "4": (
       <RaceForm
         handleRaceSelect={handleRaceSelect}
