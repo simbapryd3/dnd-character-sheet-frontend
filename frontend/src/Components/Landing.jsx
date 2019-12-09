@@ -8,7 +8,7 @@ function Landing(props) {
       <h2 className="landing_title">Let's create your D&D champion!</h2>
         <center>
         <br></br>
-      <button type="submit" value="2" name="next" onClick={props.onclick}>
+      <button className="generic_button" type="submit" value="2" name="next" onClick={props.onclick}>
         Get Started
       </button>
       </center>

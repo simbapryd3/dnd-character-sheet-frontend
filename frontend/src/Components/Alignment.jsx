@@ -6,33 +6,33 @@ function Alignment(props) {
 
   return (
     <div className="alignment_wrapper">
-      <h1 className="alignment_title">Alignment</h1>
+      <h1 className="page_title">Alignment</h1>
       <div className="alignment_options">
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           Lawful Good
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           Lawful Neutral
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           Lawful Evil
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           Chaotic Good
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           Chaotic Neutral
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           Choatic Evil
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           Neutral Good
         </button>
-        <button name="aalignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           True Neutral
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" onClick={props.onclick} value="6">
           Neutral Evil
         </button>
         <a
@@ -44,7 +44,7 @@ function Alignment(props) {
           Learn More
         </a>
       </div>
-      <button onClick={props.onclick} value="4">Back</button>
+      <button className="generic_button" onClick={props.onclick} value="4">Go Back</button>
     </div>
   );
 }

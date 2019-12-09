@@ -33,30 +33,28 @@ function ClassForm(props) {
           item.image = images[index];
           return (
             <div className="class_card">
-              <h1 className="dndClass_name" key={item.classId}>
-                {item.name}
-              </h1>
-              <img src={item.image} />
-              <button>
-                <a
-                  href={"https://www.dndbeyond.com/classes/" + item.name}
-                  target="_blank"
+              <h1 className="dndClass_name" key={item.classId}>{item.name}</h1>
+              <img className="dndClass_image" src={item.image} />
+              <ClassInfo index={index + 1} classSelect={props.handleClassSelect} />
+
+              <a
+                className="learn_button"
+                href={"https://www.dndbeyond.com/classes/" + item.name}
+                target="_blank"
                 >
-                  {" "}
                   Learn More
                 </a>
-              </button>
 
-              <ClassInfo index={index + 1} classSelect={props.handleClassSelect} />
-              <button name="dndClass" onClick={props.onclick} value="4">
+              <button id={classState[index].classId}className="select-class_button" name="dndClass" onClick={props.onclick} value="4">
                 {`Select ${item.name}`}
               </button>
+
             </div>
           );
         })}
 
       </div>
-        <button onClick={props.onclick} value="2">
+        <button className="generic_button" onClick={props.onclick} value="2">
           Back
         </button>
     </div>

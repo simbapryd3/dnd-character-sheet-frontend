@@ -165,10 +165,10 @@ function StatForm(props) {
         </table>
       </form>
       <div className="button-wrapper">
-        <button onClick={props.onclick} value="5">
+      <button className="generic_button" onClick={props.onclick} value="5">
           Back
         </button>
-        <button onClick={props.onclick} value="7">
+        <button className="generic_button" onClick={props.onclick} value="7">
           Next
         </button>
       </div>
