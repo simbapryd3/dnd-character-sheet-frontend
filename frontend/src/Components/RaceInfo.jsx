@@ -15,12 +15,11 @@ function RaceInfo(props) {
       })
       .catch(error => console.log(error));
   }, []);
-  console.log(raceInfo);
   return (
-    <div>
+    <div className="race-info">
       {isLoading && <p>Please Wait</p>}
       <div color = "white">
-        <label className="race-info"> <h3>Speed: {raceInfo.speed}</h3>
+        <label > <h3>Speed: {raceInfo.speed}</h3>
           <br></br>
           <span className="race-info_age">
             <h3 className="race-info_subtitle">Age: </h3>
@@ -41,15 +40,13 @@ function RaceInfo(props) {
               <tbody>
                 <tr>
                   {raceInfo.ability_bonuses && raceInfo.ability_bonuses.map((val, index) => 
-                    <td key={index}>{val}</td>)
-                  }
+                    <td key={index}>{val}</td>)}
                 </tr>
               </tbody>
             </table>
           </span>
-      </label>
-
-        </div>
+        </label>
+      </div>
     </div>
   );
 }

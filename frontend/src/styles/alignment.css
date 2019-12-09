@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Uncial Antiqua", cursive;
+}
+
+.alignment_wrapper {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: center;
+}
+
+.alignment_options {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    justify-items: center;
+    align-items: center;
+    color: whitesmoke;
+}

@@ -124,7 +124,7 @@ function StatForm(props) {
     { attribute: "intelligence", bonus: bonusArray[3] },
     { attribute: "wisdom", bonus: bonusArray[4] },
     { attribute: "charisma", bonus: bonusArray[5] }
-  ];
+  ]
   useEffect(() => {
     async function getRolls() {
       const statRolls = [];

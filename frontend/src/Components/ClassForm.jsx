@@ -49,16 +49,16 @@ function ClassForm(props) {
 
               <ClassInfo index={index + 1} classSelect={props.handleClassSelect} />
               <button name="dndClass" onClick={props.onclick} value="4">
-                {item.name}
+                {`Select ${item.name}`}
               </button>
             </div>
           );
         })}
 
+      </div>
         <button onClick={props.onclick} value="2">
           Back
         </button>
-      </div>
     </div>
   );
 }

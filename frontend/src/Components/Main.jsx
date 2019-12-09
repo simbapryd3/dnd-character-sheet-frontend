@@ -33,23 +33,23 @@ function Main(props) {
     name: "",
     hit_die: "",
   });
-  const [raceInfo, setRaceInfo] = useState({
+  const [raceInfo, setRaceInfo] = useState([{
     index: "",
     name: "",
     speed: "",
     ability_bonuses: [],
     alignment: "",
     age: ""
-  });
+  }]);
 
   function handleClassSelect(classInfo) {
     const { index, name, hit_die } = classInfo;
     setClassInfo({ index, name, hit_die});
   }
 
-  function handleRaceSelect(raceInfo) {
-    const { index, name, speed, ability_bonuses, alignment, age } = raceInfo;
-    setRaceInfo({ index, name, speed, ability_bonuses, alignment, age });
+  function handleRaceSelect(raceResponse) {
+    const { index, name, speed, ability_bonuses, alignment, age } = raceResponse;
+    setRaceInfo([...raceInfo, { index, name, speed, ability_bonuses, alignment, age }]);
   }
 
   useEffect(() => {
@@ -64,13 +64,22 @@ function Main(props) {
     newState[name] = val;
     setState(newState);
   }
+
   function handleClick(event) {
     const name = event.target.name;
-    const val = event.target.innerText;
+    const tempVal = event.target.innerText;
     const raceImage = event.target.id;
 
     let newState = state;
-    newState[name] = val;
+    if (tempVal.match(/Select /i)) { 
+      const val = tempVal.split("Select ")[1];
+      newState[name] = val;
+      newState.raceId = raceImage;
+    } else {
+      const val = tempVal;
+      newState[name] = val;
+    }
+
     setImage(raceImage);
     setState(newState);
     const formKey = event.target.value;
@@ -81,7 +90,6 @@ function Main(props) {
     const formKey = event.target.value;
     setContent(formKey);
   }
-
   const currState = {
     "1": <Landing onclick={handleFormClick} />,
     "2": <UserForm onchange={handleChange} onclick={handleFormClick} />,
@@ -100,10 +108,9 @@ function Main(props) {
     "5": <Alignment onclick={handleClick} />,
     "6": <StatForm race={raceInfo.ability_bonuses} onclick={handleClick} />,
     "7": (
-      <FinalSheet state={state} onchange={handleChange} onclick={handleClick} />
+      <FinalSheet state={state} imageRace={image}onchange={handleChange} onclick={handleClick} info={raceInfo[Number(state.raceId)]} />
     )
   };
-  console.log(image);
   return <div>{currState[content]}</div>;
 }
 

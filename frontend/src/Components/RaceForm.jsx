@@ -32,30 +32,31 @@ function RaceForm(props) {
         item.image = images[index];
         return (
           <div className="race_card">
-            <h1 className="dndRace_name" key={item.classId}>{item.name}</h1>
-            <img src={item.image} />
+            <h1 className="race_name" key={item.classId}>{item.name}</h1>
+            <img className="race_image" src={item.image} />
+            <RaceInfo index={index + 1} raceSelect={props.handleRaceSelect} />
 
             <a
               className="learn_button"
               href={"https://www.dndbeyond.com/races/" + item.name}
               target="_blank"
             >
-              {" "}
+              
               Learn More
             </a>
+          <button id={raceState[index].raceId} className="select-race_button" name="race" onClick={props.onclick} value="5">
+            {`Select ${item.name}`}
+          </button>
 
-            <RaceInfo index={index + 1} raceSelect={props.handleRaceSelect} />
-            <button className="select-race_button" name="race" onClick={props.onclick} value="5">
-              {`Select ${item.name}`}
-            </button>
           </div>
-        );
+          );
+        
       })}
       
+    </div>
       <button onClick={props.onclick} value="3">
         Back
       </button>
-    </div>
   </div>
   );
 }

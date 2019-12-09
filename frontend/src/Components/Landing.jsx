@@ -3,12 +3,15 @@ import "../styles/main.css";
 
 function Landing(props) {
   return (
-    <div>
+    <div className = "landing-div">
       <h1 className="landing_title">Welcome Adventurer!</h1>
       <h2 className="landing_title">Let's create your D&D champion!</h2>
+        <center>
+        <br></br>
       <button type="submit" value="2" name="next" onClick={props.onclick}>
         Get Started
       </button>
+      </center>
     </div>
   );
 }

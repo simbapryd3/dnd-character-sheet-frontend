@@ -14,15 +14,15 @@ function ClassInfo(props) {
       })
       .catch(error => console.log(error));
   }, []);
-  console.log(classInfo);
+
   return (
     <div>
       {isLoading && <p>Please Wait</p>}
       <div color = "white">
-      <label> 
-        <h3>Hit Die: {classInfo.hit_die}</h3>
-      </label>
-        </div>
+        <label> 
+          <h3>Hit Die: {classInfo.hit_die}</h3>
+        </label>
+      </div>
     </div>
   );
 }
