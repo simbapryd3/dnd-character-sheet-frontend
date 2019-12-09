@@ -60,7 +60,6 @@ const StatRow = ({ attribute, bonus }) => {
         statInputs.forEach((stat, index) => {
           if (selected.textContent === stat.value) {
             if (duplicateSet[selected.textContent] === index) {
-              // selected.classList.remove('selected');
             } else {
               selectCount += 1;
               duplicateSet[selected.textContent] = index;

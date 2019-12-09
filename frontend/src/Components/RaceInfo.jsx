@@ -17,7 +17,7 @@ function RaceInfo(props) {
   console.log(raceInfo);
   return (
     <div>
-      {isLoading && <p>Wait I'm Loading info for you</p>}
+      {isLoading && <p>Please Wait</p>}
       <div color = "white">
       <label> Speed </label>
         <h3> {raceInfo.speed}</h3>
