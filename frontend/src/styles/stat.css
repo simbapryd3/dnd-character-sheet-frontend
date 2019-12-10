@@ -72,11 +72,12 @@
 
 .stat-table {
   color: white;
-  background-color: green;
+  background-color: #961216;
   border-collapse: collapse;
   border: 1px solid paleturquoise;
   margin: 0 auto;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 .stat-table th {
@@ -85,11 +86,11 @@
 }
 
 .stat-table thead {
-  background-color: rgb(21, 76, 78);
+  background-color: black;
 }
 
 .stat-table tr:nth-child(even) {
-  background-color: lightseagreen;
+  background-color: #d81a21;
 }
 
 .stat-table td {
