@@ -23,7 +23,7 @@ const DiceRow = ({ diceRollArray = [] }) => {
 };
 
 // Row of Stats in StatForm Table
-const StatRow = ({ attribute, bonus }) => {
+const StatRow = ({ attribute, bonus, statechange }) => {
   const [modifier, setModifier] = useState(0);
   const [stat, setStat] = useState(0);
   const [total, setTotal] = useState(0);
@@ -77,6 +77,7 @@ const StatRow = ({ attribute, bonus }) => {
     const statValue = event.target.value;
     setStat(statValue);
     formatSelectedRolls();
+    statechange(event);
   }
 
   useEffect(() => {
@@ -158,6 +159,7 @@ function StatForm(props) {
                   attribute={item.attribute}
                   bonus={item.bonus}
                   diceRollArray={statRolls}
+                  statechange={props.onchange}
                 />
               );
             })}

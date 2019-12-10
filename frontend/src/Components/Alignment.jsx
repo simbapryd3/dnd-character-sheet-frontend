@@ -35,7 +35,9 @@ function Alignment(props) {
         <button className="alignment" onClick={props.onclick} value="6">
           Neutral Evil
         </button>
-        <a
+        
+      </div>
+      <a
           className="learn_button"
           href={"https://www.dndbeyond.com/sources/basic-rules/personality-and-background#Alignment"}
           target="_blank"
@@ -43,7 +45,6 @@ function Alignment(props) {
           {" "}
           Learn More
         </a>
-      </div>
       <button className="generic_button" onClick={props.onclick} value="4">Go Back</button>
     </div>
   );

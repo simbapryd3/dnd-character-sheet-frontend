@@ -58,6 +58,7 @@ function ClassForm(props) {
           Back
         </button>
     </div>
+ 
   );
 }
 

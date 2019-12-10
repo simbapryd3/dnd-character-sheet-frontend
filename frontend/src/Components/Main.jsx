@@ -7,54 +7,73 @@ import Alignment from "./Alignment";
 import StatForm from "./StatForm";
 import FinalSheet from "./Final";
 
-const statForm = {
-  step: 1,
-  username: "",
-  charactername: "",
-  dndClass: "",
-  race: "",
-  raceId: "",
-  alignment: "",
-  strength: "",
-  dexterity: "",
-  consitution: "",
-  intelligence: "",
-  wisdom: "",
-  charisma: "",
-  subscribe: false
-};
 
 function Main(props) {
-  const [state, setState] = useState(statForm);
+  const statForm = {
+    step: 1,
+    username: "",
+    charactername: "",
+    dndClass: "",
+    race: "dwarf",
+    raceId: "1",
+    alignment: "",
+    strength: "",
+    dexterity: "",
+    consitution: "",
+    intelligence: "",
+    wisdom: "",
+    charisma: "",
+    subscribe: false
+  };
+  const [state, setState] = useState({
+    step: 1,
+    username: "",
+    charactername: "",
+    dndClass: "",
+    race: "dwarf",
+    raceId: "0",
+    alignment: "",
+    strength: "",
+    dexterity: "",
+    consitution: "",
+    intelligence: "",
+    wisdom: "",
+    charisma: "",
+    subscribe: false
+  });
   const [image, setImage] = useState("");
   const [content, setContent] = useState("1");
   const [classInfo, setClassInfo] = useState({
-    index: "",
-    name: "",
-    hit_die: "",
+    "0": {
+      index: "",
+      name: "",
+      hit_die: "",
+    }
   });
-  const [raceInfo, setRaceInfo] = useState([{
-    index: "",
-    name: "",
-    speed: "",
-    ability_bonuses: [],
-    alignment: "",
-    age: ""
-  }]);
+  const [raceInfo, setRaceInfo] = useState({
+    "0": {
+      index: "",
+      name: "",
+      speed: "",
+      ability_bonuses: [],
+      alignment: "",
+      age: ""
+    }
+  });
 
   function handleClassSelect(classInfo) {
     const { index, name, hit_die } = classInfo;
-    setClassInfo({ index, name, hit_die});
+    const newClassInfo = classInfo
+    newClassInfo[index] = {index, name, hit_die}
+    setClassInfo(newClassInfo);
   }
 
   function handleRaceSelect(raceResponse) {
     const { index, name, speed, ability_bonuses, alignment, age } = raceResponse;
-    setRaceInfo([...raceInfo, { index, name, speed, ability_bonuses, alignment, age }]);
+    const newRaceInfo = raceInfo;
+    newRaceInfo[index] = { index, name, speed, ability_bonuses, alignment, age }
+    setRaceInfo(newRaceInfo);
   }
-
-  useEffect(() => {
-    let Number = props;
-  }, [props]);
 
   function handleChange(event) {
     event.preventDefault();
@@ -69,22 +88,23 @@ function Main(props) {
     const name = event.target.name;
     const tempVal = event.target.innerText;
     const raceImage = event.target.id;
-
-    let newState = state;
+    const newState = state;
     if (tempVal.match(/Select /i)) { 
       const val = tempVal.split("Select ")[1];
       newState[name] = val;
-      newState.raceId = raceImage;
+      if (name === "race") {
+        newState.raceId = raceImage;
+        setImage(raceImage);
+      }
     } else {
       const val = tempVal;
       newState[name] = val;
     }
-
-    setImage(raceImage);
     setState(newState);
     const formKey = event.target.value;
     setContent(formKey);
   }
+
   function handleFormClick(event) {
     event.preventDefault();
     const formKey = event.target.value;
@@ -106,9 +126,9 @@ function Main(props) {
       />
     ),
     "5": <Alignment onclick={handleClick} />,
-    "6": <StatForm race={raceInfo.ability_bonuses} onclick={handleClick} />,
+    "6": <StatForm race={raceInfo[state.raceId].ability_bonuses} onclick={handleClick} onchange={handleChange} />,
     "7": (
-      <FinalSheet state={state} imageRace={image}onchange={handleChange} onclick={handleClick} info={raceInfo[Number(state.raceId)]} />
+      <FinalSheet state={state} imageRace={image} onchange={handleChange} onclick={handleClick} info={raceInfo[state.raceId]} />
     )
   };
   return <div>{currState[content]}</div>;
