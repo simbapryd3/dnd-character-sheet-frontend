@@ -49,11 +49,13 @@ header {
   grid-area: button;
   padding: 0.75rem 0.75rem;
   margin: 0.25rem;
-  min-height: 4rem;
+  /* min-height: 4rem;
   max-height: 8rem;
   min-width: 4rem;
-  max-width: 8rem;
+  max-width: 8rem; */
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
 }
 
 /* LANDING PAGE CSS */
@@ -83,19 +85,85 @@ header {
   padding: 5px;
   height: 100%;
   width: 100%;
-  box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
-  border-radius: 5%;
+  /* box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6); */
+  box-shadow: 2px 2px 2px black;
+
+  border-radius: 5px;
 }
 
 .userForm {
   display: flex;
-  text-align: center;
+  text-align: left;
+  justify-content: space-between;
   flex-direction: column;
   align-content: center;
   color: whitesmoke;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding: 0.5rem;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  max-width: 600px;
+  height: 550px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-image: url("./img/parchment-paper.jpg");
+  opacity: 80%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.userForm button {
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border-width: 1px 1px 3px;
+  box-shadow: 2px 2px 2px black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin: 0.25rem;
+  margin-bottom: 10px;
+  grid-area: button;
+  padding: 0.75rem 0.75rem;
+}
+
+.userForm input {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3%;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 20px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+}
+
+.userForm > #checkbox {
+  margin: 0 4px 8px 0;
+}
+.userform_title {
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  color: whitesmoke;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.userForm h3 {
+  margin: 0 0 30px 0;
+  text-align: center;
+  color: red;
+  font-size: 20px;
+}
+.userForm label {
+  display: block;
+  margin-bottom: 8px;
 }
 
 .main-content {
@@ -161,7 +229,8 @@ header {
 .classlearn_button {
   grid-area: learnmore;
   align-self: center;
-  border-radius: 5%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
 }
 
 .select-class_button {
@@ -172,6 +241,8 @@ header {
   padding: 0.75rem 0.25rem;
   margin: 0.25rem;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
 }
 
 .select-class_button:hover {
@@ -232,7 +303,8 @@ header {
   grid-area: learnmore;
   align-self: center;
   justify-self: center;
-  border-radius: 5%;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px black;
 }
 
 .select-race_button {
@@ -244,6 +316,8 @@ header {
   padding: 0.75rem 0.25rem;
   margin: 0.25rem;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
 }
 
 .select-race_button:hover {
@@ -290,6 +364,7 @@ header {
   margin-top: 40px;
   margin-bottom: 40px;
   font-size: 100px;
+  font-weight: bold;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   padding-bottom: 20px;
 }

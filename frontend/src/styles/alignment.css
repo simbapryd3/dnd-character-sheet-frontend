@@ -9,7 +9,7 @@
   background-color: #d81a21;
   color: whitesmoke;
   /* font-size: 1.2rem; */
-  padding: 0.75rem 0.75rem;
+  padding: 0.25rem 0.25rem;
   margin: 0.25rem;
   align-content: stretch;
   /* height:200px;
@@ -38,7 +38,7 @@
 }
 
 .alignment_options button {
-  font-size: 20px;
+  font-size: 35px;
   align-content: stretch;
   width: 300px;
   height: 200px;

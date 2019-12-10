@@ -63,9 +63,9 @@ function ClassForm(props) {
           );
         })}
       </div>
-      <button className="generic_button" onClick={props.onclick} value="2">
+      {/* <button className="generic_button" onClick={props.onclick} value="2">
         Back
-      </button>
+      </button> */}
     </div>
   );
 }
