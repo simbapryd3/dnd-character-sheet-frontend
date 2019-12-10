@@ -167,6 +167,17 @@ function StatForm(props) {
             </tbody>
           </table>
         </form>
+        <div className="learn-button_wrapper">
+          <a
+            className="stat-form_learn-button"
+            href={
+              "https://www.dndbeyond.com/sources/basic-rules/using-ability-scores"
+            }
+            target="_blank"
+          >
+            Learn More
+          </a>
+        </div>
         <div className="button-wrapper">
           <button className="generic_button" onClick={props.onclick} value="5">
             Back

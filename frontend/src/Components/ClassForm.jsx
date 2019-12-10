@@ -42,15 +42,15 @@ function ClassForm(props) {
                 index={index + 1}
                 classSelect={props.handleClassSelect}
               />
-
-              <a
-                className="classLearn_button"
-                href={"https://www.dndbeyond.com/classes/" + item.name}
-                target="_blank"
-              >
-                Learn More
-              </a>
-
+              <div className="classLearn_button_wrapper">
+                <a
+                  className="classLearn_button"
+                  href={"https://www.dndbeyond.com/classes/" + item.name}
+                  target="_blank"
+                >
+                  Learn More
+                </a>
+              </div>
               <button
                 id={classState[index].classId}
                 className="select-class_button"

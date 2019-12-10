@@ -265,7 +265,7 @@ header {
     "img"
     "learnmore"
     "button";
-  grid-template-rows: 2em 1.17em auto 1.5em;
+  grid-template-rows: 2em 1.17em auto 2em;
   /* grid-template-columns: 65% 35%; */
   gap: 0.1rem;
   padding: 10px;
@@ -318,19 +318,25 @@ header {
   /* margin-left: 5rem; */
   background-color: #d81a21;
   color: whitesmoke;
-  font-size: 20px;
+  font-size: 15px;
   max-width: 10rem;
   /* padding: 0.75rem 0.25rem; */
   /* margin: 0.25rem; */
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
+  padding: 5px;
 }
 
 .classLearn_button:hover {
   cursor: pointer;
   background-color: #b1161c;
   color: white;
+}
+
+.classLearn_button_wrapper {
+  display: grid;
+  justify-content: center;
 }
 
 .select-class_button {
@@ -417,6 +423,10 @@ header {
   margin: 1px;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+  background-color: #d81a21;
+  color: whitesmoke;
 }
 
 .select-race_button {

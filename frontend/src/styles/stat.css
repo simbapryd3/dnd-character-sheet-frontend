@@ -43,6 +43,28 @@
   padding-bottom: 20px;
 }
 
+.stat-form_learn-button {
+  background-color: #d81a21;
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  justify-self: center;
+  align-self: center;
+  margin: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 150px;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.learn-button_wrapper {
+  display: grid;
+  align-content: center;
+}
+
 .stat-table {
   color: white;
   background-color: green;
