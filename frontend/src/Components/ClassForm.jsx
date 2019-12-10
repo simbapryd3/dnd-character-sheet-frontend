@@ -26,8 +26,9 @@ function ClassForm(props) {
   ];
 
   return (
-    <div>
+    <div className="classform-wrapper">
       <h1 className="class-form_title">Choose Your Character's Class</h1>
+
       <div className="multiple_class_cards">
         {classState.map((item, index) => {
           item.image = images[index];
@@ -43,7 +44,7 @@ function ClassForm(props) {
               />
 
               <a
-                className="learn_button"
+                className="classLearn_button"
                 href={"https://www.dndbeyond.com/classes/" + item.name}
                 target="_blank"
               >
@@ -63,9 +64,13 @@ function ClassForm(props) {
           );
         })}
       </div>
-      {/* <button className="generic_button" onClick={props.onclick} value="2">
-        Back
-      </button> */}
+      <button
+        className="generic_button class_back-button"
+        onClick={props.onclick}
+        value="2"
+      >
+        Go Back
+      </button>
     </div>
   );
 }

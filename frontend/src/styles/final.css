@@ -81,8 +81,11 @@ th {
   border: 1px solid rgba(49, 49, 49, 0.719);
 }
 
-.final-stats tr th:first-child,
-td:first-child {
+.final-stats tr th:first-child {
+  color: rgb(18, 58, 58);
+}
+
+.final-stats tr td:first-child {
   color: rgb(18, 58, 58);
 }
 

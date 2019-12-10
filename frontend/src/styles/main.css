@@ -36,6 +36,16 @@ header {
   align-content: center;
 }
 
+.navbar .header {
+  color: #ed1c24;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 100px;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-bottom: 20px;
+}
+
 /* BUTTONS */
 /* .button {
   display: flex;
@@ -46,7 +56,7 @@ header {
   background-color: #d81a21;
   color: whitesmoke;
   font-size: 1.2rem;
-  grid-area: button;
+  /* grid-area: button; */
   padding: 0.75rem 0.75rem;
   margin: 0.25rem;
   /* min-height: 4rem;
@@ -56,6 +66,11 @@ header {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
+}
+
+.generic_button:hover {
+  background-color: #b1161c;
+  color: white;
 }
 
 /* LANDING PAGE CSS */
@@ -91,6 +106,7 @@ header {
   border-radius: 5px;
 }
 
+/* USER FORM CSS */
 .userForm {
   display: flex;
   text-align: left;
@@ -106,7 +122,6 @@ header {
   margin: 10px auto;
   padding: 10px 20px;
   background-image: url("./img/parchment-paper.jpg");
-  opacity: 80%;
   border-radius: 8px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -128,6 +143,11 @@ header {
   padding: 0.75rem 0.75rem;
 }
 
+.userform_button:hover {
+  background-color: #b1161c;
+  color: white;
+}
+
 .userForm input {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 3%;
@@ -137,9 +157,11 @@ header {
   outline: 0;
   padding: 20px;
   width: 100%;
-  background-color: #e8eeef;
+  background-color: whitesmoke;
   color: #8a97a0;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  /* display: grid;
+  grid-column: 2 / 3; */
 }
 
 .userForm > #checkbox {
@@ -148,6 +170,7 @@ header {
 .userform_title {
   display: grid;
   grid-auto-flow: row;
+  grid-row: 1 / 2;
   justify-content: center;
   color: whitesmoke;
   font-size: 2.5rem;
@@ -155,8 +178,23 @@ header {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+/* .userform_subscribe {
+  display: grid;
+  grid-template-columns: auto 4rem;
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  padding: 20px;
+}
+
+.subscribe_checkbox {
+  display: grid;
+  grid-column: 2 / 3;
+  height: 15px;
+  width: 15px;
+} */
+
 .userForm h3 {
-  margin: 0 0 30px 0;
+  margin: 10px 0 0 10px;
   text-align: center;
   color: red;
   font-size: 20px;
@@ -171,13 +209,31 @@ header {
 }
 
 /* CLASS PAGE CSS */
+
+.classform-wrapper {
+  min-height: 100vh;
+}
+
 .multiple_class_cards {
   display: grid;
   grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
   grid-template-rows: 4fr auto;
-  gap: 2rem;
-  max-height: 500px;
+  gap: 0.5rem;
   overflow: none;
+}
+
+.class_back-button {
+  margin-left: 5rem;
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  grid-area: button;
+  max-width: 20rem;
+  padding: 0.75rem 0.25rem;
+  /* margin: 0.25rem; */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
 }
 
 .class_card {
@@ -186,30 +242,35 @@ header {
   background-color: #ffffff;
   display: grid;
   grid-template-areas:
-    "img name"
-    "img speed"
-    "img age"
-    "learnmore align"
-    "button button";
-  grid-template-rows: 4rem 5rem 6rem 7rem 7rem;
-  grid-template-columns: 50% 50%;
+    "name"
+    "hitdie"
+    "img"
+    "learnmore"
+    "button";
+  grid-template-rows: 2em 1.17em auto 1.5em;
+  /* grid-template-columns: 65% 35%; */
   gap: 0.1rem;
-  padding: 15px;
+  padding: 10px;
   margin: 15px;
   box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
-  opacity: 0.95;
+  opacity: 0.9;
   transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
 }
 
 .class_card img {
   grid-area: img;
-  display: block;
-  max-width: 5rem;
-  min-width: 90%;
-  max-height: 20rem;
-  height: 300px;
-  width: 300px;
-  padding: -0.5rem;
+  display: grid;
+  grid-row: 3 / 4;
+  justify-items: center;
+  align-items: center;
+  max-width: 420px;
+  min-width: 227px;
+  min-height: 420px;
+  max-height: 618px;
+  width: 100%;
+  height: 100%;
+  padding: -0.7rem -0.5rem -0.5rem;
+  margin: -0.6rem 0;
 }
 
 .class-form_title {
@@ -218,19 +279,25 @@ header {
   display: flex;
   text-align: center;
   flex-direction: column;
+  justify-content: center;
   align-content: center;
   padding-bottom: 20px;
 }
 
 .class-info_hit-die {
+  display: grid;
+  grid-row: 2 / 3;
   color: black;
+  justify-items: center;
+  align-items: center;
 }
 
-.classlearn_button {
+.classLearn_button {
+  display: grid;
   grid-area: learnmore;
-  align-self: center;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px black;
+  justify-items: center;
+  align-items: center;
+  margin: 1px;
 }
 
 .select-class_button {
@@ -247,10 +314,16 @@ header {
 
 .select-class_button:hover {
   cursor: pointer;
+  background-color: #b1161c;
+  color: white;
 }
 
 .dndClass_name {
+  display: grid;
   grid-area: name;
+  grid-row: 1 / 2;
+  justify-self: center;
+  align-self: center;
   color: whitesmoke;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -299,12 +372,11 @@ header {
   position: relative;
 }
 
-.learn_button {
+.raceLearn_button {
   grid-area: learnmore;
   align-self: center;
   justify-self: center;
-  border-radius: 5px;
-  box-shadow: 2px 2px 2px black;
+  margin: 1px;
 }
 
 .select-race_button {
@@ -322,6 +394,8 @@ header {
 
 .select-race_button:hover {
   cursor: pointer;
+  background-color: #b1161c;
+  color: white;
 }
 
 .race-info {
@@ -355,25 +429,9 @@ header {
 .race_name {
   grid-area: name;
   justify-self: center;
+  align-self: center;
   color: whitesmoke;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.navbar .header {
-  color: #ed1c24;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 100px;
-  font-weight: bold;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  padding-bottom: 20px;
-}
-
-.copyright {
-  font-size: 20px;
-  line-height: 0;
-  vertical-align: baseline;
-  top: -1.2em;
 }
 
 .race-form_title {
@@ -385,6 +443,22 @@ header {
   align-content: center;
   padding-bottom: 20px;
 }
+
+.race_back-button {
+  margin-left: 5rem;
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  grid-area: button;
+  max-width: 20rem;
+  padding: 0.75rem 0.25rem;
+  /* margin: 0.25rem; */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+}
+
+/* FINAL CARD STYLING */
 
 .final_card {
   border-radius: 10px;

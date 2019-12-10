@@ -5,7 +5,7 @@ function UserForm(props) {
     <div className="main_userform">
       <form className="userForm">
         <h1 className="userform_title">Sign Up!</h1>
-        <label>
+        <label className="userform_form_card">
           <h3>
             Enter your character name: &nbsp;
             <input
@@ -27,11 +27,18 @@ function UserForm(props) {
               size="60"
             />
           </h3>
-          <h3>
-            Subscribe to future newsletters? &nbsp;
-            <input type="checkbox" onChange={props.onchange} name="subscribe" />
-          </h3>
           <br></br>
+          <section className="userform_subscribe">
+            <h3>
+              Subscribe to future newsletters?{" "}
+              <input
+                type="checkbox"
+                onChange={props.onchange}
+                name="subscribe"
+                className="subscribe_checkbox"
+              />
+            </h3>
+          </section>
           <button
             className="userform_button"
             type="submit"

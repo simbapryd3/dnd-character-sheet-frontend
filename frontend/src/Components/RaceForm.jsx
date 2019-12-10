@@ -39,7 +39,7 @@ function RaceForm(props) {
               <RaceInfo index={index + 1} raceSelect={props.handleRaceSelect} />
 
               <a
-                className="learn_button"
+                className="raceLearn_button"
                 href={"https://www.dndbeyond.com/races/" + item.name}
                 target="_blank"
               >
@@ -59,8 +59,8 @@ function RaceForm(props) {
           );
         })}
       </div>
-      <button className="generic_button" onClick={props.onclick} value="3">
-        Back
+      <button className="race_back-button" onClick={props.onclick} value="3">
+        Go Back
       </button>
     </div>
   );
