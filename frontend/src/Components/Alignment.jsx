@@ -49,7 +49,7 @@ function Alignment(props) {
         </a>
       </div>
       <button
-        className="generic_button alignment_back-button"
+        className="alignment_back-button"
         onClick={props.onclick}
         value="4"
       >

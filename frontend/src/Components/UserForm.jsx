@@ -29,7 +29,7 @@ function UserForm(props) {
           </h3>
           <br></br>
           <section className="userform_subscribe">
-            <h3>
+            {/* <h3>
               Subscribe to future newsletters?{" "}
               <input
                 type="checkbox"
@@ -37,7 +37,7 @@ function UserForm(props) {
                 name="subscribe"
                 className="subscribe_checkbox"
               />
-            </h3>
+            </h3> */}
           </section>
           <button
             className="userform_button"
