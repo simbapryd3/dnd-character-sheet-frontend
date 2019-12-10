@@ -56,19 +56,20 @@ header {
   background-color: #d81a21;
   color: whitesmoke;
   font-size: 1.2rem;
-  /* grid-area: button; */
+  grid-area: button;
   padding: 0.75rem 0.75rem;
   margin: 0.25rem;
-  /* min-height: 4rem;
+  min-height: 4rem;
   max-height: 8rem;
   min-width: 4rem;
-  max-width: 8rem; */
+  max-width: 8rem;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
 }
 
 .generic_button:hover {
+  cursor: pointer;
   background-color: #b1161c;
   color: white;
 }
@@ -85,6 +86,8 @@ header {
 }
 
 .landing-div {
+  display: grid;
+  align-content: center;
   margin-left: auto;
   margin-right: auto;
   width: 800px;
@@ -122,7 +125,7 @@ header {
   padding: 0.5rem;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   max-width: 600px;
-  height: 550px;
+  height: 470px;
   margin: 10px auto;
   padding: 10px 20px;
   background-image: url("./img/parchment-paper.jpg");
@@ -307,11 +310,27 @@ header {
 }
 
 .classLearn_button {
-  display: grid;
+  /* display: grid; */
   grid-area: learnmore;
-  justify-items: center;
-  align-items: center;
-  margin: 1px;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  /* margin-left: 5rem; */
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 20px;
+  max-width: 10rem;
+  /* padding: 0.75rem 0.25rem; */
+  /* margin: 0.25rem; */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+}
+
+.classLearn_button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
 }
 
 .select-class_button {
@@ -396,6 +415,8 @@ header {
   align-self: center;
   justify-self: center;
   margin: 1px;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
 }
 
 .select-race_button {
@@ -476,6 +497,12 @@ header {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
+}
+
+.race_back-button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
 }
 
 /* FINAL CARD STYLING */

@@ -37,6 +37,8 @@ function Alignment(props) {
         </button>
       </div>
       <div className="learn-more">
+        <br></br>
+        <br></br>
         <a
           className="learn-more_button"
           href={
