@@ -429,6 +429,12 @@ header {
   color: whitesmoke;
 }
 
+.raceLearn_button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
 .select-race_button {
   background-color: #d81a21;
   color: whitesmoke;
@@ -440,6 +446,7 @@ header {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   box-shadow: 2px 2px 2px black;
   border-radius: 5px;
+  justify-self: center;
 }
 
 .select-race_button:hover {

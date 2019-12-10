@@ -60,6 +60,12 @@
   font-size: 15px;
 }
 
+.stat-form_learn-button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
 .learn-button_wrapper {
   display: grid;
   align-content: center;
