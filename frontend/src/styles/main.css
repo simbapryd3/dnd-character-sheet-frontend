@@ -210,14 +210,18 @@ header {
 
 /* CLASS PAGE CSS */
 
-.classform-wrapper {
-  min-height: 100vh;
+.class-form-wrapper {
+  /* min-height: 100vh; */
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  grid-template-rows: 100px auto;
 }
 
 .multiple_class_cards {
   display: grid;
   grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
   grid-template-rows: 4fr auto;
+  grid-column: 2 / 3;
   gap: 0.5rem;
   overflow: none;
 }
@@ -228,7 +232,8 @@ header {
   color: whitesmoke;
   font-size: 1.5rem;
   grid-area: button;
-  max-width: 20rem;
+  grid-column: 2 / 3;
+  max-width: 10rem;
   padding: 0.75rem 0.25rem;
   /* margin: 0.25rem; */
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -276,11 +281,10 @@ header {
 .class-form_title {
   color: whitesmoke;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-column: 2 / 3;
   align-content: center;
+  justify-items: center;
   padding-bottom: 20px;
 }
 
@@ -329,6 +333,11 @@ header {
 }
 
 /* RACE PAGE CSS */
+.raceform-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
 .multiple_race_cards {
   color: black;
   display: grid;
@@ -350,7 +359,7 @@ header {
     "info info"
     "info info";
   grid-template-rows: 4rem 5rem 6rem 7rem 7rem;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 40% 60%;
   gap: 0.1rem;
   padding: 15px;
   margin: 15px;
@@ -401,7 +410,8 @@ header {
 .race-info {
   grid-area: info;
   grid-row-start: 4;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   color: black;
   text-shadow: unset;
   font-weight: 300;

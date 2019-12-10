@@ -26,7 +26,7 @@ function ClassForm(props) {
   ];
 
   return (
-    <div className="classform-wrapper">
+    <div className="class-form-wrapper">
       <h1 className="class-form_title">Choose Your Character's Class</h1>
 
       <div className="multiple_class_cards">

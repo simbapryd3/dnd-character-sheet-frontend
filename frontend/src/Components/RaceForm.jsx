@@ -25,7 +25,7 @@ function RaceForm(props) {
   ];
 
   return (
-    <div className="page_title">
+    <div className="raceform-wrapper">
       <h1 className="race-form_title">Choose Your Character's Race</h1>
       <div className="multiple_race_cards">
         {raceState.map((item, index) => {

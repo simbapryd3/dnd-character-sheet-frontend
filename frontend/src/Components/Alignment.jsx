@@ -36,17 +36,23 @@ function Alignment(props) {
           Neutral Evil
         </button>
       </div>
-      <a
-        className="learn_button"
-        href={
-          "https://www.dndbeyond.com/sources/basic-rules/personality-and-background#Alignment"
-        }
-        target="_blank"
+      <div className="learn-more">
+        <a
+          className="learn-more_button"
+          href={
+            "https://www.dndbeyond.com/sources/basic-rules/personality-and-background#Alignment"
+          }
+          target="_blank"
+        >
+          {" "}
+          Learn More
+        </a>
+      </div>
+      <button
+        className="generic_button alignment_back-button"
+        onClick={props.onclick}
+        value="4"
       >
-        {" "}
-        Learn More
-      </a>
-      <button className="generic_button" onClick={props.onclick} value="4">
         Go Back
       </button>
     </div>
