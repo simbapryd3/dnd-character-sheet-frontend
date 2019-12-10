@@ -414,6 +414,7 @@ header {
   padding: -0.5rem;
   opacity: 70%;
   position: relative;
+  z-index: -1;
 }
 
 .raceLearn_button {
@@ -462,7 +463,7 @@ header {
   overflow-x: hidden;
   color: black;
   text-shadow: unset;
-  font-weight: 300;
+  font-weight: 625;
 }
 
 .race-info_alignment {
