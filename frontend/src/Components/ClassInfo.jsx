@@ -18,9 +18,9 @@ function ClassInfo(props) {
   return (
     <div>
       {isLoading && <p>Please Wait</p>}
-      <div color = "white">
-        <label> 
-          <h3>Hit Die: {classInfo.hit_die}</h3>
+      <div color="white">
+        <label>
+          <h3 className="class-info_hit-die">Hit Die: {classInfo.hit_die}</h3>
         </label>
       </div>
     </div>
@@ -28,4 +28,3 @@ function ClassInfo(props) {
 }
 
 export default ClassInfo;
-

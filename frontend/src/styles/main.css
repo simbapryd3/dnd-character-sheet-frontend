@@ -1,40 +1,40 @@
 @font-face {
-  font-family: 'Permanent Marker', cursive;
-  src: 
-    url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
+  font-family: "cinzel_decorativeregular";
+  src: url("./fonts//cinzeldecorative-regular-webfont.woff2") format("woff2"),
+    url("./fonts/cinzeldecorative-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Permanent Marker', cursive;
+  font-family: "cinzel_decorativeregular";
 }
 
 body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("./img/main-background.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("./img/main-background.png");
   background-attachment: fixed;
-  background-position: center; 
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: auto; 
+  height: auto;
   min-height: 100vh;
 }
 
 html {
   min-height: 100vh;
-  font-family: 'Permanent Marker', cursive;
+  font-family: "cinzel_decorativeregular";
 }
 
 header {
-  
   display: flex;
   flex-direction: column;
   text-align: center;
   align-content: center;
- 
 }
-
 
 /* BUTTONS */
 /* .button {
@@ -42,34 +42,19 @@ header {
   align-content: center;
 } */
 
-    .generic_button {
-      background-color: #ED1C24;
-      color: whitesmoke;
-      font-size: 1.2rem;
-      grid-area: button;
-      padding: .75rem .75rem;
-      margin: .25rem;
-      min-height: 4rem;
-      max-height: 8rem;
-      min-width: 4rem;
-      max-width: 8rem;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    }
-
-    .alignment {
-      background-color: #ED1C24;
-      color: whitesmoke;
-      /* font-size: 1.2rem; */
-      padding: .75rem .75rem;
-      margin: .25rem;
-      align-content: stretch;
-      /* height:200px;
-      width:100px; */
-      /* max-height: 7rem;
-      max-width: 7rem; */
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    }
-
+.generic_button {
+  background-color: #ed1c24;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  grid-area: button;
+  padding: 0.75rem 0.75rem;
+  margin: 0.25rem;
+  min-height: 4rem;
+  max-height: 8rem;
+  min-width: 4rem;
+  max-width: 8rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
 /* LANDING PAGE CSS */
 .landing_title {
@@ -82,26 +67,25 @@ header {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-    .landing-div {
-      margin-left: auto;
-      margin-right: auto;
-      width: 800px;
-      font-size:30px;
-    }
-    
-    .landing-div>button{
-      display: flex;
-      text-align: center;
-      flex-direction: column;
-      align-content: center;
-      margin: 25px;
-      padding: 5px;
-      height: 100%;
-      width: 100%;
-      box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
-      border-radius: 5%;
-    }
+.landing-div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  font-size: 30px;
+}
 
+.landing-div > button {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  margin: 25px;
+  padding: 5px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
+  border-radius: 5%;
+}
 
 .userForm {
   display: flex;
@@ -115,189 +99,213 @@ header {
 }
 
 .main-content {
-   width: 100%;
+  width: 100%;
 }
-
 
 /* CLASS PAGE CSS */
 .multiple_class_cards {
-  color: black;
   display: grid;
-  grid-template-columns: .25fr .25fr .25fr .25fr;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
   grid-template-rows: 4fr auto;
   gap: 2rem;
   max-height: 500px;
-  overflow: none;  
+  overflow: none;
 }
 
-    .class_card {
-      border-radius: 10px;
-      background-image: url("./img/parchment-paper.jpg");
-      background-color: #ffffff;
-      display: grid;
-      grid-template-areas: "img name"
-                          "img speed"
-                          "img age"
-                          "learnmore align"
-                          "button button";
-      grid-template-rows: 4rem 5rem 6rem 7rem 7rem;
-      grid-template-columns: 50% 50%;
-      gap: .1rem;
-      padding: 15px;
-      margin: 15px;
-      box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
-      opacity: 0.95;
-      transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
-    }
+.class_card {
+  border-radius: 10px;
+  background-image: url("./img/parchment-paper.jpg");
+  background-color: #ffffff;
+  display: grid;
+  grid-template-areas:
+    "img name"
+    "img speed"
+    "img age"
+    "learnmore align"
+    "button button";
+  grid-template-rows: 4rem 5rem 6rem 7rem 7rem;
+  grid-template-columns: 50% 50%;
+  gap: 0.1rem;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
+  transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
+}
 
-    .class_card img {
-      grid-area: img;
-      display: block;
-      max-width: 5rem;
-      min-width: 90%;
-      max-height: 20rem;
-      height: 300px;
-      width: 300px;
-      padding: -.5rem;
-    }
+.class_card img {
+  grid-area: img;
+  display: block;
+  max-width: 5rem;
+  min-width: 90%;
+  max-height: 20rem;
+  height: 300px;
+  width: 300px;
+  padding: -0.5rem;
+}
 
-    .classlearn_button {
-      grid-area: learnmore;
-      align-self: center;
-      border-radius: 5%;
-    }
+.class-form_title {
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  padding-bottom: 20px;
+}
 
-    .select-class_button {
-      background-color: #ED1C24;
-      color: whitesmoke;
-      font-size: 1.5rem;
-      grid-area: button;
-      padding: .75rem .25rem;
-      margin: .25rem;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    }
+.class-info_hit-die {
+  color: black;
+}
 
-    .select-class_button:hover {
-      cursor: pointer;
-    }
+.classlearn_button {
+  grid-area: learnmore;
+  align-self: center;
+  border-radius: 5%;
+}
 
-    .dndclass_name {
-      grid-area: name;
-  }
+.select-class_button {
+  background-color: #ed1c24;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  grid-area: button;
+  padding: 0.75rem 0.25rem;
+  margin: 0.25rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
+.select-class_button:hover {
+  cursor: pointer;
+}
+
+.dndClass_name {
+  grid-area: name;
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
 /* RACE PAGE CSS */
 .multiple_race_cards {
   color: black;
   display: grid;
-  grid-template-columns: .5fr .5fr;
+  grid-template-columns: 0.5fr 0.5fr;
   grid-template-rows: 2fr auto;
   gap: 2rem;
   overflow: none;
 }
 
-    .race_card {
-      border-radius: 10px;
-      background-image: url("./img/parchment-paper.jpg");
-      background-color: #ffffff;
-      display: grid;
-      grid-template-areas: "img name"
-                          "img button"
-                          "img learnmore"
-                          "info info"
-                          "info info";
-      grid-template-rows: 4rem 5rem 6rem 7rem 7rem;
-      grid-template-columns: 50% 50%;
-      gap: .1rem;
-      padding: 15px;
-      margin: 15px;
-      box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
-      opacity: 0.95;
-      transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
-    }
+.race_card {
+  border-radius: 10px;
+  background-image: url("./img/parchment-paper.jpg");
+  background-color: #ffffff;
+  display: grid;
+  grid-template-areas:
+    "img name"
+    "img button"
+    "img learnmore"
+    "info info"
+    "info info";
+  grid-template-rows: 4rem 5rem 6rem 7rem 7rem;
+  grid-template-columns: 50% 50%;
+  gap: 0.1rem;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
+  transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
+}
 
-    .race_card img {
-      grid-area: img;
-      display: block;
-      max-width: 5rem;
-      max-height: 20rem;
-      height: auto;
-      width: auto;
-      min-width: 90%;
-      padding: -.5rem;
-    }
+.race_card img {
+  grid-area: img;
+  display: block;
+  max-width: 5rem;
+  max-height: 20rem;
+  height: auto;
+  width: auto;
+  min-width: 90%;
+  padding: -0.5rem;
+  opacity: 70%;
+  position: relative;
+}
 
-    .learn_button {
-      grid-area: learnmore;
-      align-self: center;
-    }
+.learn_button {
+  grid-area: learnmore;
+  align-self: center;
+  justify-self: center;
+  border-radius: 5%;
+}
 
-    .select-race_button {
-      background-color: #ED1C24;
-      color: whitesmoke;
-      font-size: 1.5rem;
-      grid-area: button;
-      max-width: 20rem;
-      padding: .75rem .25rem;
-      margin: .25rem;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    }
+.select-race_button {
+  background-color: #ed1c24;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  grid-area: button;
+  max-width: 20rem;
+  padding: 0.75rem 0.25rem;
+  margin: 0.25rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
-    .select-race_button:hover {
-      cursor: pointer;
-    }
+.select-race_button:hover {
+  cursor: pointer;
+}
 
-    .race-info {
-      grid-area: info;
-      overflow: scroll;
-    }
+.race-info {
+  grid-area: info;
+  overflow: scroll;
+  color: black;
+  text-shadow: unset;
+  font-weight: 300;
+}
 
-    .race-info_alignment {
-      padding: .75rem .25rem;
-      margin: 2rem .25rem;
-    }
+.race-info_alignment {
+  padding: 0.75rem 0.25rem;
+  margin: 2rem 0.25rem;
+}
 
-    .race-info_bonus {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+.race-info_bonus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-    .race-info_bonus table {
-        justify-self: center;
-    }
+.race-info_bonus table {
+  justify-self: center;
+}
 
-    .race-info_bonus table td{
-      padding: 25px;
-    }
+.race-info_bonus table td {
+  padding: 25px;
+}
 
-    .race_name {
-        grid-area: name;
-    }
+.race_name {
+  grid-area: name;
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
+.navbar .header {
+  color: #ed1c24;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 100px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-bottom: 20px;
+}
 
- .navbar .header {
-   color: #ED1C24;
-   margin-top:40px;
-   margin-bottom:40px;
-   font-size: 100px;
-   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-   padding-bottom: 20px;
- }
-
- .copyright {
+.copyright {
   font-size: 20px;
   line-height: 0;
   vertical-align: baseline;
   top: -1.2em;
 }
 
-.page_title {
+.race-form_title {
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   display: flex;
   text-align: center;
   flex-direction: column;
   align-content: center;
-  color: whitesmoke;
   padding-bottom: 20px;
 }
 
@@ -306,13 +314,13 @@ header {
   background-image: url("./img/parchment-paper.jpg");
   background-color: #ffffff;
   display: grid;
-  grid-template-areas: 
-                       "img info info"
-                       "img info info"
-                       "img info info"
-                       "img info info";
+  grid-template-areas:
+    "img info info"
+    "img info info"
+    "img info info"
+    "img info info";
   grid-template-rows: repeat(5, auto);
-  grid-template-columns: .3fr .5fr .5fr;
+  grid-template-columns: 0.3fr 0.5fr 0.5fr;
   padding: 15px;
   margin: 15px;
   box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);

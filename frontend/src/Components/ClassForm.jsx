@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ClassInfo from "./ClassInfo"
+import ClassInfo from "./ClassInfo";
 
 function ClassForm(props) {
   const [classState, setClassState] = useState([]);
@@ -26,39 +26,47 @@ function ClassForm(props) {
   ];
 
   return (
-    <div className="page_title">
-      <h1>Choose Your Character's Class</h1>
-      <div className="multiple_class_cards">           
+    <div>
+      <h1 className="class-form_title">Choose Your Character's Class</h1>
+      <div className="multiple_class_cards">
         {classState.map((item, index) => {
           item.image = images[index];
           return (
             <div className="class_card">
-              <h1 className="dndClass_name" key={item.classId}>{item.name}</h1>
+              <h1 className="dndClass_name" key={item.classId}>
+                {item.name}
+              </h1>
               <img className="dndClass_image" src={item.image} />
-              <ClassInfo index={index + 1} classSelect={props.handleClassSelect} />
+              <ClassInfo
+                index={index + 1}
+                classSelect={props.handleClassSelect}
+              />
 
               <a
                 className="learn_button"
                 href={"https://www.dndbeyond.com/classes/" + item.name}
                 target="_blank"
-                >
-                  Learn More
-                </a>
+              >
+                Learn More
+              </a>
 
-              <button id={classState[index].classId}className="select-class_button" name="dndClass" onClick={props.onclick} value="4">
+              <button
+                id={classState[index].classId}
+                className="select-class_button"
+                name="dndClass"
+                onClick={props.onclick}
+                value="4"
+              >
                 {`Select ${item.name}`}
               </button>
-
             </div>
           );
         })}
-
       </div>
-        <button className="generic_button" onClick={props.onclick} value="2">
-          Back
-        </button>
+      <button className="generic_button" onClick={props.onclick} value="2">
+        Back
+      </button>
     </div>
- 
   );
 }
 

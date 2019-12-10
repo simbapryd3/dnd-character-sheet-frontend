@@ -26,37 +26,43 @@ function RaceForm(props) {
 
   return (
     <div className="page_title">
-    <h1>Choose Your Character's Race</h1>
-    <div className="multiple_race_cards">
-      {raceState.map((item, index) => {
-        item.image = images[index];
-        return (
-          <div className="race_card">
-            <h1 className="race_name" key={item.raceId}>{item.name}</h1>
-            <img className="race_image" src={item.image} />
-            <RaceInfo index={index + 1} raceSelect={props.handleRaceSelect} />
+      <h1 className="race-form_title">Choose Your Character's Race</h1>
+      <div className="multiple_race_cards">
+        {raceState.map((item, index) => {
+          item.image = images[index];
+          return (
+            <div className="race_card">
+              <h1 className="race_name" key={item.raceId}>
+                {item.name}
+              </h1>
+              <img className="race_image" src={item.image} />
+              <RaceInfo index={index + 1} raceSelect={props.handleRaceSelect} />
 
-            <a
-              className="learn_button"
-              href={"https://www.dndbeyond.com/races/" + item.name}
-              target="_blank"
-            >
-              Learn More
-            </a>
+              <a
+                className="learn_button"
+                href={"https://www.dndbeyond.com/races/" + item.name}
+                target="_blank"
+              >
+                Learn More
+              </a>
 
-            <button id={raceState[index].raceId} className="select-race_button" name="race" onClick={props.onclick} value="5">
-              {`Select ${item.name}`}
-            </button>
-
-          </div>
-        );  
-      })}
-      
-    </div>
+              <button
+                id={raceState[index].raceId}
+                className="select-race_button"
+                name="race"
+                onClick={props.onclick}
+                value="5"
+              >
+                {`Select ${item.name}`}
+              </button>
+            </div>
+          );
+        })}
+      </div>
       <button className="generic_button" onClick={props.onclick} value="3">
         Back
       </button>
-  </div>
+    </div>
   );
 }
 

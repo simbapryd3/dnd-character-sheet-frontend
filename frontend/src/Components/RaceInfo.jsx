@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function RaceInfo(props) {
-  const attributeTitles = ["STR", "DEX", "CON", "INT", "WIS", "CHA"]
+  const attributeTitles = ["STR", "DEX", "CON", "INT", "WIS", "CHA"];
   const [raceInfo, setRaceInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,33 +18,37 @@ function RaceInfo(props) {
   return (
     <div className="race-info">
       {isLoading && <p>Please Wait</p>}
-      <div color = "white">
-        <label> 
+      <div color="white">
+        <label>
           <h3>Speed: {raceInfo.speed}</h3>
-            <br></br>
+          <br></br>
           <span className="race-info_age">
             <h3 className="race-info_subtitle">Age: </h3>
             {raceInfo.age}
           </span>
-            <br></br>
+          <br></br>
           <span className="race-info_alignment">
             <h3 className="race-info_subtitle">Alignment: </h3>
             {raceInfo.alignment}
           </span>
-            <br></br>
-            <br></br>
+          <br></br>
+          <br></br>
           <span className="race-info_bonus">
             <h3 className="race-info_subtitle">Bonuses: </h3>
             <table>
               <thead>
                 <tr>
-                  {attributeTitles.map((title, index) => <th key={index}>{title}</th>)}
+                  {attributeTitles.map((title, index) => (
+                    <th key={index}>{title}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  {raceInfo.ability_bonuses && raceInfo.ability_bonuses.map((val, index) => 
-                    <td key={index}>{val}</td>)}
+                  {raceInfo.ability_bonuses &&
+                    raceInfo.ability_bonuses.map((val, index) => (
+                      <td key={index}>{val}</td>
+                    ))}
                 </tr>
               </tbody>
             </table>
