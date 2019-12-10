@@ -10,12 +10,11 @@ const DiceRow = ({ diceRollArray = [] }) => {
     <table className="diceroll">
       <tbody>
         <tr>
-          {diceRollArray.map((roll, index) => 
-              <td className="die-value selection" key={index}>
-                {roll}
-              </td>
-          )
-          }
+          {diceRollArray.map((roll, index) => (
+            <td className="die-value selection" key={index}>
+              {roll}
+            </td>
+          ))}
         </tr>
       </tbody>
     </table>
@@ -32,30 +31,30 @@ const StatRow = ({ attribute, bonus, statechange }) => {
     const diceRollList = document.querySelectorAll(".die-value");
     const statInputs = document.querySelectorAll(".stat-value");
     let matchIndex = {};
-    for (let x=0; x < diceRollList.length; x++) {
+    for (let x = 0; x < diceRollList.length; x++) {
       let findCount = 0;
       let die = diceRollList[x];
       for (let i = 0; i < statInputs.length; i++) {
         let stat = statInputs[i];
         if (findCount > 0) {
           continue;
-        } 
+        }
         if (stat.value === die.textContent) {
           if (matchIndex[die.textContent] === i) {
             continue;
           } else {
             matchIndex[die.textContent] = i;
-            die.classList.add('selected');
+            die.classList.add("selected");
             findCount += 1;
           }
         }
       }
     }
-    
-    const selectedRolls = document.querySelectorAll(".selected")
-    let duplicateSet = {}
+
+    const selectedRolls = document.querySelectorAll(".selected");
+    let duplicateSet = {};
     if (selectedRolls.length && selectedRolls.length > 0) {
-      selectedRolls.forEach((selected) => {
+      selectedRolls.forEach(selected => {
         let selectCount = 0;
         statInputs.forEach((stat, index) => {
           if (selected.textContent === stat.value) {
@@ -65,11 +64,11 @@ const StatRow = ({ attribute, bonus, statechange }) => {
               duplicateSet[selected.textContent] = index;
             }
           }
-        })
+        });
         if (selectCount === 0) {
-          selected.classList.remove('selected');
+          selected.classList.remove("selected");
         }
-      })
+      });
     }
   }
 
@@ -97,8 +96,7 @@ const StatRow = ({ attribute, bonus, statechange }) => {
             className="stat-value"
             name={attribute}
             onChange={handleChange}
-            defaultValue="0"
-          ></input>
+            defaultValue="0"></input>
         </label>
       </td>
       <td>
@@ -125,7 +123,7 @@ function StatForm(props) {
     { attribute: "intelligence", bonus: bonusArray[3] },
     { attribute: "wisdom", bonus: bonusArray[4] },
     { attribute: "charisma", bonus: bonusArray[5] }
-  ]
+  ];
   useEffect(() => {
     async function getRolls() {
       const statRolls = [];
@@ -167,7 +165,7 @@ function StatForm(props) {
         </table>
       </form>
       <div className="button-wrapper">
-      <button className="generic_button" onClick={props.onclick} value="5">
+        <button className="generic_button" onClick={props.onclick} value="5">
           Back
         </button>
         <button className="generic_button" onClick={props.onclick} value="7">

@@ -3,13 +3,11 @@
   justify-content: center;
   margin: 0 auto;
   width: 85%;
-
 }
 
 .button-wrapper button {
-  padding: .25rem;
+  padding: 0.25rem;
   margin: 1rem 2rem;
-
 }
 
 .die-value {
@@ -30,7 +28,8 @@
 }
 
 .statform-wrapper {
-  width: 85%;
+  width: 600px;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -39,22 +38,35 @@
   background-color: green;
   border-collapse: collapse;
   border: 1px solid paleturquoise;
+  width: 700px;
+  height: 600px;
   margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+  display: table;
+  border-radius: 3%;
 }
 
 .stat-table th {
-  padding: .3rem .75rem;
+  padding: 0.3rem 0.75rem;
+  width: auto;
+  height: auto;
 }
 
 .stat-table thead {
   background-color: rgb(21, 76, 78);
+  font-weight: bold;
+  font-size: 1em;
+  text-align: left;
 }
 
 .stat-table tr:nth-child(even) {
   background-color: lightseagreen;
+  width: 400px;
 }
 
 .stat-table td {
-  padding: .25rem .75rem;
-  margin: .5rem;
+  padding: 0.25rem 0.75rem;
+  margin: 0.5rem;
 }
