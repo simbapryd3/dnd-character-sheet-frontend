@@ -1,39 +1,62 @@
 import React, { useState, useEffect } from "react";
+import "../styles/alignment.css";
+
 function Alignment(props) {
   const [alignmentState, setAlignmentState] = useState();
 
   return (
-    <div>
-      <h1> Alignment</h1>
-      <div>
-        <button name="alignment" onClick={props.onclick} value="6">
+    <div className="alignment_wrapper">
+      <h1 className="alignment_title">Choose Your Character's Alignment</h1>
+      <div className="alignment_options">
+        <button className="alignment" id="lg" onClick={props.onclick} value="6">
           Lawful Good
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" id="ln" onClick={props.onclick} value="6">
           Lawful Neutral
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" id="le" onClick={props.onclick} value="6">
           Lawful Evil
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" id="cg" onClick={props.onclick} value="6">
           Chaotic Good
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" id="cn" onClick={props.onclick} value="6">
           Chaotic Neutral
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" id="ce" onClick={props.onclick} value="6">
           Choatic Evil
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" id="ng" onClick={props.onclick} value="6">
           Neutral Good
         </button>
-        <button name="aalignment" onClick={props.onclick} value="6">
+        <button className="alignment" id="tn" onClick={props.onclick} value="6">
           True Neutral
         </button>
-        <button name="alignment" onClick={props.onclick} value="6">
+        <button className="alignment" id="ne" onClick={props.onclick} value="6">
           Neutral Evil
         </button>
       </div>
+      <div className="learn-more">
+        <br></br>
+        <br></br>
+        <a
+          className="learn-more_button"
+          href={
+            "https://www.dndbeyond.com/sources/basic-rules/personality-and-background#Alignment"
+          }
+          target="_blank"
+        >
+          {" "}
+          Learn More
+        </a>
+      </div>
+      <button
+        className="alignment_back-button"
+        onClick={props.onclick}
+        value="4"
+      >
+        Go Back
+      </button>
     </div>
   );
 }

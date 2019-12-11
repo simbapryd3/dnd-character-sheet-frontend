@@ -1,15 +1,11 @@
-* {
+/* DELETE DELETE */
+
+/* * {
   box-sizing: border-box;
   margin: 0%;
   padding: 0%
 }
 
-
-button{
-display: flex;
-align-content: center;
-flex-direction: row;
-}
 
 footer{
 display: flex;
@@ -31,9 +27,7 @@ form div {
     margin: 10px 5px;
 }
 header {
-  /* position: fixed; */
   width: 100%;
-  /* padding-top: 50px; */
   background: #000;
   transition: 0.7s all;
   z-index: 100;
@@ -115,4 +109,4 @@ align-content: space-between;
 nav a:hover {
   background: red;
 }
-
+ */

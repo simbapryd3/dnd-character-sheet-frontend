@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useFetchGet from "../utils/utils";
+import RaceInfo from "./RaceInfo";
 
 function RaceForm(props) {
   const [raceState, setRaceState] = useState([]);
@@ -7,8 +7,11 @@ function RaceForm(props) {
   useEffect(() => {
     fetch("http://localhost:4000/races/all")
       .then(response => response.json())
-      .then(data => setRaceState(data.raceResponse));
+      .then(data => {
+        setRaceState(data.raceResponse);
+      });
   }, []);
+
   const images = [
     "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/254/420/618/636271781394265550.png",
     "https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png",
@@ -22,28 +25,43 @@ function RaceForm(props) {
   ];
 
   return (
-    <div>
-      <h1>Choose Your Character's Race</h1>
-      {raceState.map((item, index) => {
-        item.image = images[index];
-        return (
-          <div>
-            <h1 key={item.classId}>{item.name}</h1>
-            <img src={item.image} />
-            <button>
+    <div className="raceform-wrapper">
+      <h1 className="race-form_title">Choose Your Character's Race</h1>
+      <div className="multiple_race_cards">
+        {raceState.map((item, index) => {
+          item.image = images[index];
+          return (
+            <div className="race_card">
+              <h1 className="race_name" key={item.raceId}>
+                {item.name}
+              </h1>
+              <img className="race_image" src={item.image} />
+              <RaceInfo index={index + 1} raceSelect={props.handleRaceSelect} />
+
               <a
+                className="raceLearn_button"
                 href={"https://www.dndbeyond.com/races/" + item.name}
                 target="_blank"
               >
                 Learn More
               </a>
-            </button>
-            <button name="race" onClick={props.onclick} value="5">
-              {item.name}
-            </button>
-          </div>
-        );
-      })}
+
+              <button
+                id={raceState[index].raceId}
+                className="select-race_button"
+                name="race"
+                onClick={props.onclick}
+                value="5"
+              >
+                {`Select ${item.name}`}
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      <button className="race_back-button" onClick={props.onclick} value="3">
+        Go Back
+      </button>
     </div>
   );
 }

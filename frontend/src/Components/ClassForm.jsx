@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ClassInfo from "./ClassInfo";
 
 function ClassForm(props) {
   const [classState, setClassState] = useState([]);
@@ -23,32 +24,55 @@ function ClassForm(props) {
     "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/375/420/618/636272708661726603.png",
     "https://media-waterdeep.cursecdn.com/avatars/thumbnails/6/357/420/618/636272696881281556.png"
   ];
-  console.log(classState);
 
   return (
-    <div>
-      <h1>Choose Your Character's Class</h1>
-      {classState.map((item, index) => {
-        item.image = images[index];
-        return (
-          <div>
-            <h1 key={item.classId}>{item.name}</h1>
-            <img src={item.image} />
-            <button>
-              <a
-                href={"https://www.dndbeyond.com/classes/" + item.name}
-                target="_blank"
+    <div className="class-form-wrapper">
+      <h1 className="class-form_title">Choose Your Character's Class</h1>
+
+      <div className="multiple_class_cards">
+        {classState.map((item, index) => {
+          item.image = images[index];
+          return (
+            <div className="class_card">
+              <h1 className="dndClass_name" key={item.classId}>
+                {item.name}
+              </h1>
+              <img className="dndClass_image" src={item.image} />
+              <ClassInfo
+                index={index + 1}
+                classSelect={props.handleClassSelect}
+              />
+              <div className="classLearn_button_wrapper">
+                <a
+                  className="classLearn_button"
+                  href={"https://www.dndbeyond.com/classes/" + item.name}
+                  target="_blank"
+                >
+                  Learn More
+                </a>
+              </div>
+              <button
+                id={classState[index].classId}
+                className="select-class_button"
+                name="dndClass"
+                onClick={props.onclick}
+                value="4"
               >
-                Learn More
-              </a>
-            </button>
-            <button name="dndClass" onClick={props.onclick} value="4">
-              {item.name}
-            </button>
-          </div>
-        );
-      })}
+                {`Select ${item.name}`}
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      <button
+        className="generic_button class_back-button"
+        onClick={props.onclick}
+        value="2"
+      >
+        Go Back
+      </button>
     </div>
   );
 }
+
 export default ClassForm;

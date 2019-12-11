@@ -1,25 +1,544 @@
+@font-face {
+  font-family: "cinzel_decorativeregular";
+  src: url("./fonts//cinzeldecorative-regular-webfont.woff2") format("woff2"),
+    url("./fonts/cinzeldecorative-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "cinzel_decorativeregular";
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("./img/main-background.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  min-height: 100vh;
+}
+
+html {
+  min-height: 100vh;
+  font-family: "cinzel_decorativeregular";
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+}
+
+.navbar .header {
+  color: #ed1c24;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 100px;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding-bottom: 20px;
+}
+
+/* BUTTONS */
+/* .button {
+  display: flex;
+  align-content: center;
+} */
+
+.generic_button {
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  grid-area: button;
+  padding: 0.75rem 0.75rem;
+  margin: 0.25rem;
+  min-height: 4rem;
+  max-height: 8rem;
+  min-width: 4rem;
+  max-width: 8rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+}
+
+.generic_button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
+/* LANDING PAGE CSS */
+.landing_title {
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  color: whitesmoke;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.landing-div {
+  display: grid;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  font-size: 30px;
+}
+
+.landing-div > button {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  margin: 25px;
+  padding: 5px;
+  height: 100%;
+  width: 100%;
+  /* box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6); */
+  box-shadow: 2px 2px 2px black;
+
+  border-radius: 5px;
+}
+
+/* USER FORM CSS */
+.userForm {
+  /* display: flex;
+  text-align: left;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: center; */
+  display: grid;
+  grid-template-rows: 2fr 4fr;
+  align-content: center;
+  justify-content: center;
+  color: whitesmoke;
+  font-size: 2rem;
+  padding: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  max-width: 600px;
+  height: 470px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background-image: url("./img/parchment-paper.jpg");
+  border-radius: 8px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.userForm button {
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border-width: 1px 1px 3px;
+  box-shadow: 2px 2px 2px black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin: 0.25rem;
+  margin-bottom: 10px;
+  grid-area: button;
+  padding: 0.75rem 0.75rem;
+}
+
+.userform_button:hover {
+  background-color: #b1161c;
+  color: white;
+}
+
+.userForm input {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3%;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 20px;
+  width: 100%;
+  background-color: whitesmoke;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  /* display: grid;
+  grid-column: 2 / 3; */
+}
+
+.userForm > #checkbox {
+  margin: 0 4px 8px 0;
+}
+.userform_title {
+  display: grid;
+  grid-auto-flow: row;
+  grid-row: 1 / 2;
+  justify-content: center;
+  align-content: center;
+  color: whitesmoke;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.userform_form_card {
+  justify-content: center;
+  align-content: center;
+}
+
+/* .userform_subscribe {
+  display: grid;
+  grid-template-columns: auto 4rem;
+  grid-template-rows: auto;
+  grid-auto-flow: row;
+  padding: 20px;
+}
+
+.subscribe_checkbox {
+  display: grid;
+  grid-column: 2 / 3;
+  height: 15px;
+  width: 15px;
+} */
+
+.userForm h3 {
+  margin: 10px 0 0 10px;
+  text-align: center;
+  color: red;
+  font-size: 20px;
+}
+.userForm label {
+  display: block;
+  margin-bottom: 8px;
+}
+
 .main-content {
-    margin: .25rem 0;
-    padding: .25rem 0;
-    width: 90%;
+  width: 100%;
 }
 
-.main-header {
-    margin: .25rem 0;
-    padding: .25rem 0;
+/* CLASS PAGE CSS */
+
+.class-form-wrapper {
+  /* min-height: 100vh; */
+  display: grid;
+  grid-template-columns: 40px auto 40px;
+  grid-template-rows: 100px auto;
 }
 
-.navbar {
-    margin: .25rem 0;
-    padding: .25rem 0;
+.multiple_class_cards {
+  display: grid;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+  grid-template-rows: 4fr auto;
+  grid-column: 2 / 3;
+  gap: 0.5rem;
+  overflow: none;
 }
 
-.main-wrapper {
-    margin: 0 auto;
-    width: 85%;
-    min-height: 100vh;
-    min-width: 40rem;
-    max-width: 70rem;
-    background-color: rgb(176, 179, 178);
-    box-shadow: rgb(71, 71, 71) 3px 3px 2px 4px;
+.class_back-button {
+  margin-left: 5rem;
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  grid-area: button;
+  grid-column: 2 / 3;
+  max-width: 10rem;
+  padding: 0.75rem 0.25rem;
+  /* margin: 0.25rem; */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+}
+
+.class_card {
+  border-radius: 10px;
+  background-image: url("./img/parchment-paper.jpg");
+  background-color: #ffffff;
+  display: grid;
+  grid-template-areas:
+    "name"
+    "hitdie"
+    "img"
+    "learnmore"
+    "button";
+  grid-template-rows: 2em 1.17em auto 2em;
+  /* grid-template-columns: 65% 35%; */
+  gap: 0.1rem;
+  padding: 10px;
+  margin: 15px;
+  box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
+  opacity: 0.9;
+  transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
+}
+
+.class_card img {
+  grid-area: img;
+  display: grid;
+  grid-row: 3 / 4;
+  justify-items: center;
+  align-items: center;
+  max-width: 420px;
+  min-width: 227px;
+  min-height: 420px;
+  max-height: 618px;
+  width: 100%;
+  height: 100%;
+  padding: -0.7rem -0.5rem -0.5rem;
+  margin: -0.6rem 0;
+}
+
+.class-form_title {
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: grid;
+  grid-column: 2 / 3;
+  align-content: center;
+  justify-items: center;
+  padding-bottom: 20px;
+}
+
+.class-info_hit-die {
+  display: grid;
+  grid-row: 2 / 3;
+  color: black;
+  justify-items: center;
+  align-items: center;
+}
+
+.classLearn_button {
+  /* display: grid; */
+  grid-area: learnmore;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  /* margin-left: 5rem; */
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 15px;
+  max-width: 10rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.classLearn_button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
+.classLearn_button_wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.select-class_button {
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  grid-area: button;
+  padding: 0.75rem 0.25rem;
+  margin: 0.25rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+}
+
+.select-class_button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
+.dndClass_name {
+  display: grid;
+  grid-area: name;
+  grid-row: 1 / 2;
+  justify-self: center;
+  align-self: center;
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* RACE PAGE CSS */
+.raceform-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.multiple_race_cards {
+  color: black;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-template-rows: 2fr auto;
+  gap: 2rem;
+  overflow: none;
+}
+
+.race_card {
+  border-radius: 10px;
+  background-image: url("./img/parchment-paper.jpg");
+  background-color: #ffffff;
+  display: grid;
+  grid-template-areas:
+    "img name"
+    "img button"
+    "img learnmore"
+    "info info"
+    "info info";
+  grid-template-rows: 4rem 5rem 6rem 7rem 7rem;
+  grid-template-columns: 40% 60%;
+  gap: 0.1rem;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
+  transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
+}
+
+.race_card img {
+  grid-area: img;
+  display: block;
+  max-width: 5rem;
+  max-height: 20rem;
+  height: auto;
+  width: auto;
+  min-width: 90%;
+  padding: -0.5rem;
+  opacity: 70%;
+  position: relative;
+  z-index: -1;
+}
+
+.raceLearn_button {
+  grid-area: learnmore;
+  align-self: center;
+  justify-self: center;
+  margin: 1px;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+  background-color: #d81a21;
+  color: whitesmoke;
+}
+
+.raceLearn_button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
+.select-race_button {
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  grid-area: button;
+  max-width: 20rem;
+  padding: 0.75rem 0.25rem;
+  margin: 0.25rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  justify-self: center;
+}
+
+.select-race_button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
+.race-info {
+  grid-area: info;
+  grid-row-start: 4;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: black;
+  text-shadow: unset;
+  font-weight: 625;
+}
+
+.race-info_alignment {
+  padding: 0.75rem 0.25rem;
+  margin: 2rem 0.25rem;
+}
+
+.race-info_bonus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.race-info_bonus table {
+  justify-self: center;
+}
+
+.race-info_bonus table td {
+  padding: 25px;
+}
+
+.race_name {
+  grid-area: name;
+  justify-self: center;
+  align-self: center;
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.race-form_title {
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  padding-bottom: 20px;
+}
+
+.race_back-button {
+  margin-left: 5rem;
+  background-color: #d81a21;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  grid-area: button;
+  max-width: 20rem;
+  padding: 0.75rem 0.25rem;
+  /* margin: 0.25rem; */
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+}
+
+.race_back-button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
+/* FINAL CARD STYLING */
+
+.final_card {
+  border-radius: 10px;
+  background-image: url("./img/parchment-paper.jpg");
+  background-color: #ffffff;
+  display: grid;
+  grid-template-areas:
+    "img info info"
+    "img info info"
+    "img info info"
+    "img info info";
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: 0.3fr 0.5fr 0.5fr;
+  padding: 15px;
+  margin: 15px;
+  box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
+  transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
+  font-size: 20px;
 }

@@ -1,0 +1,98 @@
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 85%;
+}
+
+.button-wrapper button {
+  padding: 0.25rem;
+  margin: 1rem 2rem;
+}
+
+.die-value {
+  color: whitesmoke;
+  font-size: 2rem;
+  padding: 0.25rem 0.85rem;
+  margin: 0.25rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.diceroll {
+  margin: 0 auto;
+  padding: 0.5rem;
+}
+
+.selected {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.statform-wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.stat-form_title {
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  padding-bottom: 20px;
+}
+
+.stat-form_learn-button {
+  background-color: #d81a21;
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  justify-self: center;
+  align-self: center;
+  margin: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 2px black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.stat-form_learn-button:hover {
+  cursor: pointer;
+  background-color: #b1161c;
+  color: white;
+}
+
+.learn-button_wrapper {
+  display: grid;
+  align-content: center;
+}
+
+.stat-table {
+  color: white;
+  background-color: green;
+  border-collapse: collapse;
+  border: 1px solid paleturquoise;
+  margin: 0 auto;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.stat-table th {
+  padding: 0.3rem 0.75rem;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.stat-table thead {
+  background-color: rgb(21, 76, 78);
+}
+
+.stat-table tr:nth-child(even) {
+  background-color: lightseagreen;
+}
+
+.stat-table td {
+  padding: 0.25rem 0.75rem;
+  margin: 0.5rem;
+}

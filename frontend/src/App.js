@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/main.css";
 import "./App.css";
 import Landing from "./Components/Landing";
-import Nav from "./Components/Nav";
+import Nav from "./Components/nav";
 import Main from "./Components/Main";
 
 function App() {
@@ -11,17 +11,15 @@ function App() {
   const handleClick = event => {
     const val = event.target.value;
     setNavState(val);
-    console.log(navState);
-    console.log(val);
   };
 
   return (
     <div className="main-wrapper">
-      <header className="main-header">
-        <Nav />
+      <header>
+        <Nav onclick={handleClick} />
       </header>
       <div className="main-content">
-        <Main />
+        <Main props={navState} />
       </div>
       {navState}
     </div>

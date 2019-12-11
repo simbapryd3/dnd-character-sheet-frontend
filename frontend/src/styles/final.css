@@ -1,0 +1,96 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Uncial Antiqua", cursive;
+  }
+  
+  @font-face {
+    font-family: "Uncial Antiqua", cursive;
+    src: url("./fonts/UncialAntiqua-Regular.ttf");
+  } */
+
+.final-div {
+  border-radius: 10px;
+  background-image: url("./img/parchment-paper.jpg");
+  background-color: #ffffff;
+  display: grid;
+  grid-template-areas:
+    "img img img info"
+    "img img img info"
+    "img img img info"
+    "button button";
+
+  padding: 15px;
+  margin: 15px;
+  max-width: 500px;
+  max-height: 5000px;
+  box-shadow: 15px 15px 15px -15px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
+  transition: transform 0.5s, opacity 0.5s, max-height 0.5s, margin-bottom 0.3s;
+}
+
+.final_card {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+}
+
+.final_card_title {
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-content: center;
+  padding-bottom: 20px;
+}
+
+.final_race_info {
+  display: grid;
+  grid-template-rows: auto 8rem;
+}
+
+.race_info {
+  grid-row: 1 / 2;
+}
+
+.reset {
+  grid-row: 2 / 3;
+  justify-self: center;
+}
+
+#reset_button {
+  min-height: 4rem;
+  max-height: 8rem;
+  min-width: 8rem;
+  max-width: 12rem;
+}
+
+/* Stats */
+.final-stats {
+  border: 5px solid black;
+  /* padding: .25rem; */
+  margin: 0.5rem;
+}
+
+.final-stats td,
+th {
+  padding: 0.2rem 0.5rem;
+  margin: 0.25rem;
+  border: 1px solid rgba(49, 49, 49, 0.719);
+}
+
+.final-stats tr th:first-child {
+  color: black;
+}
+
+.final-stats tr td:first-child {
+  color: rgb(18, 58, 58);
+}
+
+.stats-wrapper {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
