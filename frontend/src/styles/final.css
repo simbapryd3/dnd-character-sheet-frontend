@@ -69,7 +69,7 @@
 
 /* Stats */
 .final-stats {
-  border: 5px solid rgba(30, 75, 119, 0.452);
+  border: 5px solid black;
   /* padding: .25rem; */
   margin: 0.5rem;
 }
@@ -82,7 +82,7 @@ th {
 }
 
 .final-stats tr th:first-child {
-  color: rgb(18, 58, 58);
+  color: black;
 }
 
 .final-stats tr td:first-child {
